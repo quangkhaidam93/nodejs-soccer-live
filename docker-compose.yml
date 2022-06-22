@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.3'
 services:
   db:
     container_name: db
@@ -21,20 +21,16 @@ services:
     container_name: server
     build: .
     restart: always
-    container_name: server
-    command: npm run dev
+    command: npm run start
     depends_on:
       - db
     environment:
       - TOKEN_SECRET=${TOKEN_SECRET}
     ports:
       - ${SERVER_PORT}:${SERVER_PORT}
-    volumes:
-      - ./:/usr/app
-      - /src/app/node_modules
   # migration:
   #   build: .
-  #   command: apt-get install postgresql && sh ./scripts/wait_for_postgres.sh db sequelize db:migrate
+  #   command: ./scripts/wait_for_postgres.sh db sequelize db:migrate
   #   depends_on:
   #     - db
   #     - server
