@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-const router = require("./routers");
+const viewRouter = require("./routers/view.router");
+const apiRouter = require("./routers/api.router");
 const app = express();
 const envConfigs = require('../config/environment');
 
@@ -13,8 +14,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(bodyParser.json());
 
 // Database connection
-const db = require("./configs/database");
-const { devNull } = require("os");
+const db = require("./database");
 db.authenticate()
   .then(() => {
     console.log("Database connected...");
@@ -24,10 +24,10 @@ db.authenticate()
   });
 
 // web views
-app.use("/", router.viewRouter);
+app.use("/", viewRouter);
 
 // apis
-app.use("/api", router.authRouter);
+app.use("/api", apiRouter.authRouter);
 
 db.sync().then(() => {
   app.listen(envConfigs.serverPort, function () {

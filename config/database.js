@@ -5,14 +5,14 @@ module.exports = {
     username: envConfig.postgresUser,
     password: envConfig.postgresPassword,
     database: envConfig.postgresDatabase,
-    host: '127.0.0.1',
+    host: 'db',
     dialect: "postgres",
   },
   prod: {
     username: envConfig.postgresUser,
     password: envConfig.postgresPassword,
     database: envConfig.postgresDatabase,
-    host: '127.0.0.1',
+    host: 'db',
     dialect: "postgres",
   },
 };

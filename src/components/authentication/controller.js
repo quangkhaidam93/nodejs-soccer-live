@@ -1,5 +1,4 @@
 require("dotenv").config();
-const pool = require("../../configs/database");
 const User = require("../../models/user.model");
 
 let counter = 0;

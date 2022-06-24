@@ -28,12 +28,14 @@ services:
       - TOKEN_SECRET=${TOKEN_SECRET}
     ports:
       - ${SERVER_PORT}:${SERVER_PORT}
-  # migration:
-  #   build: .
-  #   command: ./scripts/wait_for_postgres.sh db sequelize db:migrate
-  #   depends_on:
-  #     - db
-  #     - server
+  migration:
+    build: 
+      context: .
+      dockerfile: Dockerfile.migration
+    command: ["sh", "-c", "make migration-prepare"]
+    depends_on:
+      - db
+      - server
 volumes:
   db:
     driver: local

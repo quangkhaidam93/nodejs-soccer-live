@@ -4,6 +4,9 @@ services:
     container_name: db
     image: postgres:14.3-alpine
     restart: always
+    user: root
+    env_file:
+      - .env
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -32,12 +35,16 @@ services:
     volumes:
       - ./:/usr/app
       - /src/app/node_modules
-  # migration:
-  #   build: .
-  #   command: apt-get install postgresql && sh ./scripts/wait_for_postgres.sh db sequelize db:migrate
-  #   depends_on:
-  #     - db
-  #     - server
+  migration:
+    build: 
+      context: .
+      dockerfile: Dockerfile.migration
+    env_file:
+      - .env
+    command: ["sh", "-c", "make migration-prepare"]
+    depends_on:
+      - db
+      - server
 volumes:
   db:
     driver: local

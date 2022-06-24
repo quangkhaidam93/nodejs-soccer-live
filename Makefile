@@ -3,7 +3,7 @@ dev:
 dev-with-new-build:
 	docker-compose -f docker-compose.dev.yml up --build
 prod:
-	docker-compose up
+	docker-compose up --detach
 migration-up:
 	npm i -g sequelize-cli
 	npm run migrate-up
@@ -13,6 +13,6 @@ migration-down:
 migration-down-all:
 	npm i -g sequelize-cli
 	npm run migrate-down-all
-# migration-prepare:
-# 	apt-get install postgresql
-# 	./scripts/wait_for_postgres.sh 127.0.0.1 sequelize db:migrate
+migration-prepare:
+	chmod +x /usr/app/scripts/*
+	sh ./scripts/wait_for_postgres.sh db sequelize db:migrate
