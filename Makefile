@@ -16,3 +16,5 @@ migration-down-all:
 migration-prepare:
 	chmod +x /usr/app/scripts/*
 	sh ./scripts/wait_for_postgres.sh db sequelize db:migrate
+copy-ssl-configs:
+	cp /etc/letsencrypt/live/atzstore.net/* ./secrets

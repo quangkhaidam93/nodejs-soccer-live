@@ -4,7 +4,12 @@ const path = require("path");
 const viewRouter = require("./routers/view.router");
 const apiRouter = require("./routers/api.router");
 const app = express();
-const envConfigs = require('../config/environment');
+const envConfigs = require("../config/environment");
+const http = require("http");
+const https = require("https");
+const fs = require("fs");
+
+app.use(express.static(__dirname, { dotfiles: "allow" }));
 
 //setting view engine to ejs and path to views directory
 app.set("view engine", "ejs");
@@ -29,8 +34,38 @@ app.use("/", viewRouter);
 // apis
 app.use("/api", apiRouter.authRouter);
 
-db.sync().then(() => {
-  app.listen(envConfigs.serverPort, function () {
-    console.log("Server is running on port ", envConfigs.serverPort);
-  });
-}).catch((error) => console.log(error));
+db.sync()
+  .then(() => {
+    const httpServer = http.createServer(app);
+
+    httpServer.listen(envConfigs.serverPort, function () {
+      console.log("Server is running on port ", envConfigs.serverPort);
+    });
+
+    console.log(envConfigs.nodeEnv);
+
+    // HTTPS Server
+    if (envConfigs.nodeEnv === "prod") {
+      const secretPath = path.join(__dirname, "../secrets");
+
+      const privateKey = fs.readFileSync(secretPath + "/privkey.pem", "utf8");
+      const certificate = fs.readFileSync(secretPath + "/cert.pem", "utf8");
+      const ca = fs.readFileSync(secretPath + "/chain.pem", "utf8");
+
+      const credentials = {
+        key: privateKey,
+        cert: certificate,
+        ca: ca,
+      };
+
+      const httpsServer = https.createServer(credentials, app);
+
+      httpsServer.listen(envConfigs.serverPortWithSSL, function () {
+        console.log(
+          "Server is running with SSL on port",
+          envConfigs.serverPortWithSSL
+        );
+      });
+    }
+  })
+  .catch((error) => console.log(error));
