@@ -14,7 +14,7 @@ services:
     ports:
       - ${DB_PORT}:${DB_PORT}
     volumes:
-      - db:/var/lib/posgresql/data
+      - postgres-data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 5s
@@ -36,7 +36,7 @@ services:
       - ${SERVER_PORT}:${SERVER_PORT}
     volumes:
       - ./:/usr/app
-      - /src/app/node_modules
+      # - /usr/app/node_modules
   migration:
     build: 
       context: .
@@ -48,5 +48,5 @@ services:
       - db
       - server
 volumes:
-  db:
+  postgres-data:
     driver: local
