@@ -1,0 +1,19 @@
+@import './../constants/_flex.scss';
+
+.blvIcon__container {
+  @include flex-column-center-center;
+  padding: 0 35px;
+
+  &:first-child {
+    margin-left: unset;
+  }
+
+  .blv__image {
+    height: 76px;
+    width: 76px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .blv__name {}
+}

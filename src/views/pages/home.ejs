@@ -2,8 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Random Title</title>
-
+    <title>Soccer live</title>
+    <link rel="stylesheet" href="/assets/styles/footer.css" />
+    <link rel="stylesheet" href="/assets/styles/header.css" />
+    <link rel="stylesheet" href="/assets/styles/homepage.css" />
     <!-- CSS link (loading Semantic UI from a CDN) -->
     <!-- <link
       rel="stylesheet"
@@ -12,18 +14,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     /> -->
-    <link rel="stylesheet" href="/assets/styles/main.css" /> 
-    <style>
-      body {
-        padding: 50px;
-      }
-    </style>
   </head>
-  <body class="container">
-    <header>
-      <div class="ui inverted menu">
-        <a class="item" href="/"> Home </a>
-        <a class="item" href="/magic"> Magic </a>
-      </div>
-    </header>
-  
+  <body class="homepage__container">
+    <%- include('./../components/header'); %>
+    <%- include('./../screens/homepageScreen.ejs'); %>
+    <%- include('./../components/footer'); %>
+  </body>
+</html>

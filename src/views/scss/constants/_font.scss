@@ -1,0 +1,11 @@
+@mixin header-font {
+  font-size: 18px;
+  text-decoration: unset;
+  color: white;
+  font-weight: bold;
+}
+
+@mixin match-font {
+  font-size: 12px;
+  color: #777777;
+}

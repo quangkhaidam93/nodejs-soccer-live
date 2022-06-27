@@ -1,0 +1,87 @@
+@import './../constants/flex';
+@import './../constants/font';
+
+.matchInfo {
+  @include flex-column-around-center;
+  min-width: 225px;
+  width: 225px;
+  height: 100px;
+  padding: 16px 16px 20px;
+  border-right: 1px solid #d8d8d8;
+  margin-left: 10px;
+
+  &:first-child {
+    margin-left: unset;
+  }
+
+  .match__header {
+    width: 100%;
+    @include flex-between-center;
+
+    .matchHeader__left {
+      @include flex-start-center;
+
+      .sport__icon {
+        height: 14px;
+      }
+
+      .league__name {
+        @include match-font;
+        margin-left: 5px;
+      }
+    }
+
+    .matchHeader__right {
+      .match__time {
+        @include match-font;
+      }
+    }
+  }
+
+  .battle__info {
+    width: 100%;
+    @include flex-between-center;
+
+    .battle__left {
+      .team__battle {
+        @include flex-start-center;
+        margin-top: 10px;
+
+        .team__logo {
+          height: 24px;
+        }
+
+        .team__name {
+          max-width: 115px;
+          margin-left: 5px;
+          font-size: 14px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    .battle__right {
+      height: 100%;
+      @include flex-column-center-center;
+
+      .appoinment__btn {
+        margin-top: 10px;
+        padding: 5px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+        background: #f8c21b;
+        cursor: pointer;
+
+        &.doneAppoinment__btn {
+          display: none;
+        }
+      }
+
+      // .match__appoinment {}
+    }
+  }
+}

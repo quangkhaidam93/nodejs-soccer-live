@@ -1,0 +1,35 @@
+@import './../constants/flex';
+
+.hotlive__video {
+  @include flex-column-start-center;
+  width: 285px;
+  margin-top: 20px;
+
+  .video__live {
+    width: 100%;
+    height: 160px;
+
+    .liveVideo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .hotlive__name {
+    width: calc(100% - 28px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: white;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 400;
+    padding: 0 14px;
+    font-size: 14px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    color: black;
+    text-decoration: unset;
+  }
+}

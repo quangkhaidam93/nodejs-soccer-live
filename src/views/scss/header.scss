@@ -1,0 +1,51 @@
+@import './constants/flex';
+@import './constants/font';
+@import './componentsScss/livestreamMain';
+
+.Page__header {
+  position: fixed;
+  width: calc(100% - 120px);
+  padding: 20px 60px;
+  @include flex-between-center;
+  z-index: 10000;
+
+  &.header__sticky {
+    background-color: #00000066;
+  }
+
+  .header__left {
+    @include flex-between-center;
+
+    .header__logo {
+      height: 50px;
+      cursor: pointer;
+    }
+
+    .header__menu {
+      margin-left: 20px;
+      @include header-font;
+    }
+  }
+
+  .header__right {
+    @include flex-between-center;
+
+    .header__btn {
+      margin-left: 20px;
+      border: unset;
+      background-color: unset;
+      @include header-font;
+      cursor: pointer;
+
+      .ungtuyen__btn {}
+
+      .dangnhap__btn {}
+
+      .dangki__btn {}
+    }
+
+    .separator {
+      @include header-font;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import './constants/flex';
+
+.footer__container {
+  height: 100px;
+  @include flex-column-center-center;
+  color: white;
+  background-color: black;
+
+  .content__container {
+    height: 100%;
+    width: 100%;
+    @include flex-column-around-center;
+
+    .footerMenu__container {
+      width: 1000px;
+      @include flex-between-center;
+
+      .menu__cont {
+        color: white;
+        text-decoration: unset;
+      }
+    }
+
+    .copyright__text {
+      font-weight: bold;
+    }
+  }
+}

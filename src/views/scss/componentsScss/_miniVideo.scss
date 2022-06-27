@@ -1,0 +1,27 @@
+.miniVideo {
+  position: relative;
+  margin-top: 10px;
+
+  &:first-child {
+    margin-top: unset;
+  }
+
+  .mini__video {
+    width: 130px;
+    height: 80px;
+    border-radius: 6px;
+
+    &.video__selected {
+      border: 2px solid #ffc71c;
+    }
+  }
+
+  .selected__arrow {
+    position: absolute;
+    top: 40%;
+    left: -8px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #ffc71c;
+  }
+}
