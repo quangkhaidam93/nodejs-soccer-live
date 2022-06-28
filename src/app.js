@@ -34,6 +34,9 @@ app.use("/", viewRouter);
 // apis
 app.use("/api", apiRouter.authRouter, apiRouter.userRouter);
 
+// scss
+app.use('/assets', express.static(path.join(__dirname, '../public')));
+
 db.sync()
   .then(() => {
     const httpServer = http.createServer(app);
@@ -41,8 +44,6 @@ db.sync()
     httpServer.listen(envConfigs.serverPort, function () {
       console.log("Server is running on port ", envConfigs.serverPort);
     });
-
-    console.log(envConfigs.nodeEnv);
 
     // HTTPS Server
     if (envConfigs.nodeEnv === "prod") {
