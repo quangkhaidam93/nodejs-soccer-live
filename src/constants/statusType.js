@@ -1,0 +1,26 @@
+/*
+  Response type:
+  - SUCCESS: 200
+  - CREATED: 201
+  - SEE OTHER: 303
+  - BAD REQUEST: 400
+  - UNAUTHORIZED: 401 - Lack of token or invalid token
+  - FORBIDDEN: 403 - Has token but refused
+  - NOT FOUND: 404
+  - CONFLICT: 409
+  - INTERNAL SERVER ERROR: 500
+*/
+
+const statusType = {
+  SUCCESS: 'SUCCESS',
+  CREATED: 'CREATED',
+  SEE_OTHER: 'SEE OTHER',
+  BAD_REQUEST: 'BAD REQUEST',
+  NOT_FOUND: 'NOT FOUND',
+  CONFLICT: 'CONFLICT',
+  INTERNAL_SERVER_ERROR: 'INTERNAL_SERVER_ERROR',
+  UNAUTHORIZED: 'UNAUTHORIZED',
+  FORBIDDEN: 'FORBIDDEN'
+}
+
+module.exports = statusType;

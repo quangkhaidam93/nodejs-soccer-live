@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const controller = require('./controller');
+const { verifyToken } = require('../../middlewares/authJwt');
 
-router.post('/signin', controller.signIn);
-router.post('/signup', controller.signUp);
+router.get('/user/:username', [verifyToken], controller.getUserInfo);
 
 module.exports = router;

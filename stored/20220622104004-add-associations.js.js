@@ -10,7 +10,7 @@ module.exports = {
      */
     return queryInterface.addColumn(
       "Posts", // name of Source model
-      "hahaId", // name of the key we're adding
+      "userId", // name of the key we're adding
       {
         type: Sequelize.INTEGER,
         references: {

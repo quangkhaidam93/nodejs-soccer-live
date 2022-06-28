@@ -25,16 +25,17 @@ prod-down-volumes:
 prod-down-all:
 	docker-compose down --volumes --rmi all
 migration-up:
-	npm i -g sequelize-cli
-	npm run migrate-up
+	sequelize db:migrate --options-path host-configs/.sequelizerc
 migration-down:
-	npm i -g sequelize-cli
-	npm run migrate-down
+	sequelize db:migrate:undo --options-path host-configs/.sequelizerc
 migration-down-all:
-	npm i -g sequelize-cli
-	npm run migrate-down-all
+	sequelize db:migrate:undo:all --options-path host-configs/.sequelizerc
 migration-prepare:
 	chmod +x /usr/app/scripts/*
 	sh ./scripts/wait_for_postgres.sh db sequelize db:migrate
 copy-ssl-configs:
 	cp /etc/letsencrypt/live/atzstore.net/* ./secrets
+seed-data:
+	sequelize db:seed:all --options-path host-configs/.sequelizerc
+test:
+	sh ./scripts/load_dotenv.sh && printenv
