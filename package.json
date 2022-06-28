@@ -7,14 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/app.js",
     "migrate-up": "sequelize db:migrate",
-    "migrate down": "sequelize db:migrate:undo",
-    "migrate down all": "sequelize db:migrate:undo:all",
+    "migrate-down": "sequelize db:migrate:undo",
+    "migrate-down-all": "sequelize db:migrate:undo:all",
     "start": "node src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",

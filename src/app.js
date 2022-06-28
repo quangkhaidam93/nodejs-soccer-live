@@ -32,7 +32,7 @@ db.authenticate()
 app.use("/", viewRouter);
 
 // apis
-app.use("/api", apiRouter.authRouter);
+app.use("/api", apiRouter.authRouter, apiRouter.userRouter);
 
 db.sync()
   .then(() => {
