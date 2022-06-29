@@ -32,10 +32,17 @@ db.authenticate()
 app.use("/", viewRouter);
 
 // apis
-app.use("/api", apiRouter.authRouter, apiRouter.userRouter);
+app.use(
+  "/api",
+  apiRouter.authRouter,
+  apiRouter.userRouter,
+  apiRouter.casterRouter,
+  apiRouter.clubRouter,
+  apiRouter.leagueRouter
+);
 
 // scss
-app.use('/assets', express.static(path.join(__dirname, '../public')));
+app.use("/assets", express.static(path.join(__dirname, "../public")));
 
 db.sync()
   .then(() => {

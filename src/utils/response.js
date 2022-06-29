@@ -46,7 +46,7 @@ function generateResponse({ type, data, message }) {
   };
 }
 
-function generateResponseForArrayData({ type, arrayData, message }) {
+function generateResponseForArray({ type, arrayData, message }) {
   return {
     statusCode: transformStatusTypeToStatusCode(type),
     arrayData,
@@ -56,5 +56,5 @@ function generateResponseForArrayData({ type, arrayData, message }) {
 
 module.exports = {
   generateResponse,
-  generateResponseForArrayData,
+  generateResponseForArray,
 };
