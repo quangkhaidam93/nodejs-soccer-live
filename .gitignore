@@ -11,3 +11,6 @@ package-lock.json
 .vscode
 
 stored/
+
+#upload images
+/public/images/
