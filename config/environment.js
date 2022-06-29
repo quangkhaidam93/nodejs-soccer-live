@@ -8,4 +8,5 @@ module.exports = {
   serverPort: process.env.SERVER_PORT,
   serverPortWithSSL: process.env.SERVER_PORT_WITH_SSL,
   nodeEnv: process.env.NODE_ENV,
+  serverDomain: process.env.SERVER_DOMAIN,
 }

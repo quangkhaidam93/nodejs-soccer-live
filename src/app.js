@@ -38,11 +38,15 @@ app.use(
   apiRouter.userRouter,
   apiRouter.casterRouter,
   apiRouter.clubRouter,
-  apiRouter.leagueRouter
+  apiRouter.leagueRouter,
+  apiRouter.fileRouter
 );
 
-// scss
+// assets
 app.use("/assets", express.static(path.join(__dirname, "../public")));
+
+// serve images
+// app.user("/images", express.static(path.join(__dirname, '../public/images')))
 
 db.sync()
   .then(() => {
