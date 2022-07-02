@@ -46,11 +46,14 @@ function generateResponse({ type, data, message }) {
   };
 }
 
-function generateResponseForArray({ type, arrayData, message }) {
+function generateResponseForArray({ type, arrayData, message, total, hasMore, cursor }) {
   return {
     statusCode: transformStatusTypeToStatusCode(type),
     arrayData,
     message,
+    total,
+    hasMore,
+    cursor,
   };
 }
 

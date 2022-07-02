@@ -26,8 +26,6 @@ const editCaster = async (id, updatedCaster) => {
 const deleteCaster = async (id) => {
   const deletedCaster = await Caster.destroy({ where: { id } });
 
-  console.log('abc', deletedCaster);
-
   return deletedCaster;
 };
 
