@@ -3,5 +3,6 @@ const router = express.Router();
 
 router.get('/', (req, res) => res.render("index"));
 router.get('/magic', (req, res) => res.render("magic"));
+router.get('/chat', (req, res) => res.render("chat"));
 
 module.exports = router;

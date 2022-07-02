@@ -4,6 +4,7 @@ const casterRouter = require("../components/caster/router");
 const clubRouter = require("../components/club/router");
 const leagueRouter = require("../components/league/router");
 const fileRouter = require("../components/file/router");
+const messageRoute = require("../components/message/router");
 
 module.exports = {
   authRouter,
@@ -12,4 +13,5 @@ module.exports = {
   clubRouter,
   leagueRouter,
   fileRouter,
+  messageRoute,
 };
