@@ -3,7 +3,7 @@ const { Sequelize } = require('sequelize');
 const db = new Sequelize(envConfigs.postgresDatabase, envConfigs.postgresUser, envConfigs.postgresPassword, {
     host: 'db',
     dialect: 'postgres',
-
+    database: envConfigs.postgresDatabase,
     pool: {
         max: 5,
         min: 0,

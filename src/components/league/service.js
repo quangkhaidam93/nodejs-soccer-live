@@ -24,8 +24,13 @@ const editLeague = async (id, updatedLeague) => {
 };
 
 const deleteLeague = async (id) => {
-  const deletedLeague = await League.destroy({ where: { id } });
-  return deletedLeague;
+  try {
+    const deletedLeague = await League.destroy({ where: { id } });
+    return deletedLeague;
+  } catch(err) {
+    console.log("Error", err);
+    return null;
+  }
 };
 
 module.exports = {
