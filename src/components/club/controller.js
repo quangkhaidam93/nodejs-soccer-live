@@ -28,7 +28,7 @@ const getClubInfo = async (req, res) => {
     res.send(
       generateResponse({
         type: statusType.NOT_FOUND,
-        message: "Không tìm thấy caster này",
+        message: "Không tìm thấy club này",
       })
     );
   }
@@ -51,7 +51,7 @@ const createNewClub = async (req, res) => {
     res.send(
       generateResponse({
         type: statusType.INTERNAL_SERVER_ERROR,
-        message: "Không thể tạo caster",
+        message: "Không thể tạo club",
       })
     );
   }
@@ -102,7 +102,7 @@ const deleteClub = async (req, res) => {
     res.send(
       generateResponse({
         type: statusType.INTERNAL_SERVER_ERROR,
-        message: "Xoá caster không thành công",
+        message: "Xoá club không thành công",
       })
     );
   }

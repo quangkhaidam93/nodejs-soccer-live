@@ -42,7 +42,8 @@ app.use(
   apiRouter.clubRouter,
   apiRouter.leagueRouter,
   apiRouter.fileRouter,
-  apiRouter.messageRoute,
+  apiRouter.messageRouter,
+  apiRouter.roomRouter,
 );
 
 // assets

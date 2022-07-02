@@ -16,16 +16,18 @@ const createClub = async (newClub) => {
 };
 
 const editClub = async (id, updatedClub) => {
-  const club = await Club.update(
-    { ...updatedClub },
-    { where: { id } }
-  );
+  const club = await Club.update({ ...updatedClub }, { where: { id } });
   return club[0];
 };
 
 const deleteClub = async (id) => {
-  const deletedClub = await Club.destroy({ where: { id } });
-  return deletedClub;
+  try {
+    const deletedClub = await Club.destroy({ where: { id } });
+    return deletedClub;
+  } catch (err) {
+    console.log("Error", err);
+    return null;
+  }
 };
 
 module.exports = {

@@ -16,17 +16,19 @@ const createCaster = async (newCaster) => {
 };
 
 const editCaster = async (id, updatedCaster) => {
-  const caster = await Caster.update(
-    { ...updatedCaster },
-    { where: { id } }
-  );
+  const caster = await Caster.update({ ...updatedCaster }, { where: { id } });
   return caster[0];
 };
 
 const deleteCaster = async (id) => {
-  const deletedCaster = await Caster.destroy({ where: { id } });
+  try {
+    const deletedCaster = await Caster.destroy({ where: { id } });
 
-  return deletedCaster;
+    return deletedCaster;
+  } catch (err) {
+    console.log("Error", err);
+    return null;
+  }
 };
 
 module.exports = {

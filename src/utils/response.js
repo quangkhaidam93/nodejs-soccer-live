@@ -46,7 +46,7 @@ function generateResponse({ type, data, message }) {
   };
 }
 
-function generateResponseForArray({ type, arrayData, message, total, hasMore, cursor }) {
+function generateResponseForArray({ type, arrayData, message, total, hasMore, cursor, offset }) {
   return {
     statusCode: transformStatusTypeToStatusCode(type),
     arrayData,

@@ -95,7 +95,7 @@ const deleteLeague = async (req, res) => {
     res.send(
       generateResponse({
         type: statusType.INTERNAL_SERVER_ERROR,
-        message: "Xoá caster không thành công",
+        message: "Xoá league không thành công",
       })
     );
   }
