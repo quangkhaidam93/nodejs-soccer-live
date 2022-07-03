@@ -1,0 +1,31 @@
+@import './../constants/flex';
+@import './hotliveVideo';
+
+.hotlive__slider {
+  .hotlive__tabPanel {
+    @include flex-start-center;
+
+    .hotlive__image {
+      width: 180px;
+    }
+
+    .tabPanel__switch {
+      margin-left: 40px;
+      font-size: 16px;
+      color: #777;
+      cursor: pointer;
+
+      &.tab__selected {
+        font-size: 24px;
+        font-weight: bold;
+        color: black;
+        border-bottom: 5px solid #ffb600;
+      }
+    }
+  }
+
+  .hotliveVideo__container {
+    @include flex-between-center;
+    flex-wrap: wrap;
+  }
+}

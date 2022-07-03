@@ -1,0 +1,65 @@
+@import './../constants/flex';
+@import './../constants/scrollbar';
+@import './../componentsScss/matchInfo';
+@import './../componentsScss/blvIcon';
+@import './../componentsScss/miniVideo';
+@import './../componentsScss/hotliveSlider';
+@import './../componentsScss/infoHomepage';
+
+.homepage__screen {
+  min-height: calc(100vh - 660px);
+
+  .livestream__container {
+    padding: 90px 60px 20px;
+    background-image: url("//sta.cvndnss.com/xoilac2_web/assets/xoilac2/img/banner.jpg");
+  }
+
+  .general__slider {
+    width: calc(100% - 120px);
+    padding: 30px 60px;
+    background-color: transparent;
+    @include customHorizontalScrollbarV1(7px, 7px, #afafaf, #d5d5d5);
+
+    &.match__slider {}
+
+    &.blv__slider {
+
+
+      .blvSlider__title {
+        width: 100%;
+        position: relative;
+
+        .title__image {
+          position: absolute;
+          top: -50px;
+          width: 100%;
+        }
+      }
+    }
+
+    .generalSlider__container {
+      padding: 5px 10px;
+      @include flex-start-center;
+      overflow-y: hidden;
+      border-radius: 6px;
+      // background-color: white;
+      box-shadow: rgb(0 0 0 / 20%) 0 12px 28px 0,
+        rgb(0 0 0 / 10%) 0 2px 4px 0,
+        rgb(255 255 255 / 5%) 0 0 0 1px inset;
+
+      &.matchSlider__container {}
+
+      &.blvSlider__container {
+        padding: 70px 40px 35px;
+      }
+    }
+  }
+
+  .hotlive__container {
+    padding: 20px 60px;
+  }
+
+  .info__container {
+    padding: 20px 60px;
+  }
+}

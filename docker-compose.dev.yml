@@ -16,17 +16,16 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
       interval: 5s
       timeout: 5s
       retries: 5
   server:
     container_name: server
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile.dev
     restart: always
-    container_name: server
     command: npm run dev
     depends_on:
       - db
@@ -37,17 +36,17 @@ services:
     volumes:
       - ./:/usr/app
       - /usr/app/node_modules
-  migration:
-    build: 
-      context: .
-      dockerfile: Dockerfile.migration
-    restart: on-failure
-    env_file:
-      - .env
-    command: ["sh", "-c", "make migration-prepare"]
-    depends_on:
-      - db
-      - server
+  # migration:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.migration
+  #   restart: on-failure
+  #   env_file:
+  #     - .env
+  #   command: [ "sh", "-c", "make migration-prepare" ]
+  #   depends_on:
+  #     - db
+  #     - server
 volumes:
   postgres-data:
     driver: local

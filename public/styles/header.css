@@ -1,0 +1,92 @@
+.LiveStreamMain {
+  min-height: 450px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+}
+.LiveStreamMain .livestream__left {
+  height: 100%;
+  flex: 1;
+}
+.LiveStreamMain .livestream__left .livestream__video {
+  min-height: 450px;
+  width: 100%;
+}
+.LiveStreamMain ::-webkit-scrollbar {
+  width: 6px;
+}
+.LiveStreamMain ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  height: 50%;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #d5d5d5;
+}
+.LiveStreamMain ::-webkit-scrollbar-track {
+  background-color: rgba(41, 41, 41, 0.768627451);
+}
+.LiveStreamMain .livestream__right {
+  height: 100%;
+  max-height: 450px;
+  overflow-x: hidden;
+}
+.LiveStreamMain .livestream__right .video__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 150px;
+  padding: 10px 20px 10px 15px;
+}
+
+.Page__header {
+  position: fixed;
+  width: calc(100% - 120px);
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+}
+.Page__header.header__sticky {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.Page__header .header__left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Page__header .header__left .header__logo {
+  height: 50px;
+  cursor: pointer;
+}
+.Page__header .header__left .header__menu {
+  margin-left: 20px;
+  font-size: 18px;
+  text-decoration: unset;
+  color: white;
+  font-weight: bold;
+}
+.Page__header .header__right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Page__header .header__right .header__btn {
+  margin-left: 20px;
+  border: unset;
+  background-color: unset;
+  font-size: 18px;
+  text-decoration: unset;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.Page__header .header__right .separator {
+  font-size: 18px;
+  text-decoration: unset;
+  color: white;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=header.css.map */
