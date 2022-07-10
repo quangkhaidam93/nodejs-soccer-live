@@ -1,9 +1,55 @@
 <div class="loginAdminScreen">
-  <form action="login" method="get">
-    <label for="email">Email:</label>
-    <input type="text" id="email" name="email"><br><br>
-    <label for="password">Password:</label>
-    <input type="Password" id="password" name="password"><br><br>
-    <button type="submit" onclick="login()">Submit</button>
+  <div class="login__title">Admin Login</div>
+  <form class="login__cont">
+    <div class="input__form">
+      <label class="form__title" for="email">Email:</label>
+      <input 
+        class="form__input" 
+        type="text" 
+        id="email" 
+        name="email" 
+        onchange="checkEmailValue()">
+    </div>
+    <div class="input__form">
+      <label class="form__title" for="password">Password:</label>
+      <input 
+        class="form__input" 
+        type="Password" 
+        id="password" 
+        name="password"
+        onchange="checkPWValue()">
+    </div>
+    <div class="form__action">
+      <button class="submit__btn" onclick="login()">Submit</button>
+    </div>
   </form>
 </div>
+
+<script>
+  let email = '';
+  let password = '';
+
+  function checkEmailValue() {
+    const emailInput = document.getElementById("email");
+    email = emailInput.value;
+    // check email is email ?
+  }
+
+  function checkPWValue() {
+    const pwInput = document.getElementById("password");
+    password = pwInput.value;
+    if (password.length < 10) {
+      console.log('error')
+      // add them field
+    }
+  }
+
+  function login() {
+    if (email && password) {
+
+    } else {
+      console.log('invalid email')
+    }
+    console.log('come')
+  }
+</script>

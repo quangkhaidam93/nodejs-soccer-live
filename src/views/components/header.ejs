@@ -4,17 +4,16 @@
       <img
         class="header__logo"
         src="//sta.cvndnss.com/xoilac2_web/assets/xoilac2/img/logo.png?v=20220602"
-        alt="xoilac2 Live"
-        style="display: inline;">
+        alt="xoilac2 Live">
       <a class="header__menu" href="/"> Trang chủ  </a>
       <a class="header__menu" href="/lich-truc-tiep"> Lịch trực tiếp </a>
       <a class="header__menu" href="/highlights"> Highlights </a>
     </div>
     <div class="header__right">
       <button class="header__btn ungtuyen__btn">Ứng tuyển BLV</button>
-      <button class="header__btn dangnhap__btn">Đăng nhập</button>
+      <a class="header__btn dangnhap__btn" href="/admin/login">Đăng nhập</a>
       <div class="separator">|</div>
-      <button class="header__btn dangki__btn">Đăng kí</button>
+      <a class="header__btn dangki__btn" href="/admin/login">Đăng kí</a>
     </div>
   </div>
 </header>
@@ -24,10 +23,10 @@
   window.onscroll = function() {myFunction()};
 
   // Get the header
-  var header = document.getElementById("pageHeader");
+  const header = document.getElementById("pageHeader");
 
   // Get the offset position of the navbar
-  var sticky = header.offsetTop;
+  const sticky = header.offsetTop;
 
   // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
   function myFunction() {
@@ -37,4 +36,8 @@
       header.classList.remove("header__sticky");
     }
   }
+</script>
+
+<script>
+
 </script>

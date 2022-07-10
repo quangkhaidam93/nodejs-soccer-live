@@ -1,0 +1,58 @@
+@import "./../constants/_flex.scss";
+
+.SideBar {
+  height: 100%;
+  width: 320px;
+  background-color: #D4A373;
+
+  .Sidebar__logo {
+    padding: 50px 20px 35px;
+    @include flex-column-center-center;
+
+    .brand__logo {
+      width: 260px;
+    }
+  }
+
+  .Menu__navigation {
+    @include flex-column-start-start;
+    width: 100%;
+    padding: 20px 20px 35px;
+    border-top: 0.5px solid #FAEDCD;
+
+    .menu__title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #FEFAE0;
+    }
+
+    .navigate {
+      width: 100%;
+      padding: 8px 20px;
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: unset;
+      color: white;
+      cursor: pointer;
+
+      &.navi__firstChild {
+        margin-top: 50px;
+      }
+
+      &.navigate__active {
+        color: #757575;
+        background-color: #FEFAE0;
+
+        &:hover {
+          background-color: #FEFAE0;
+        }
+      }
+
+      &:hover {
+        background-color: #CCD5AE;
+      }
+    }
+  }
+}

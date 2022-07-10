@@ -1,0 +1,72 @@
+.loginAdminScreen {
+  background: #F0F0F0;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  min-width: 500px;
+}
+.loginAdminScreen .login__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 15px 30px;
+  border-radius: 25px 25px 0 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: #9FE8FF;
+}
+.loginAdminScreen .login__cont {
+  padding: 15px 30px;
+}
+.loginAdminScreen .login__cont .input__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.loginAdminScreen .login__cont .input__form:first-child {
+  margin-top: 15px;
+}
+.loginAdminScreen .login__cont .input__form .form__title {
+  width: 120px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.loginAdminScreen .login__cont .input__form .form__input {
+  height: 30px;
+  width: 100%;
+  border: unset;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.loginAdminScreen .login__cont .form__action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 30px 0 15px;
+}
+.loginAdminScreen .login__cont .form__action .submit__btn {
+  height: 35px;
+  width: 100px;
+  font-size: 14px;
+  font-weight: bold;
+  border: unset;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: #A2D2FF;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.adminPage__login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: unset;
+}
+
+/*# sourceMappingURL=loginAdmin.css.map */
