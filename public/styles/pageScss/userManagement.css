@@ -1,3 +1,75 @@
+.UserManagementScreen {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+}
+.UserManagementScreen .screen__header {
+  height: 80px;
+  background-color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 10px 20px;
+}
+.UserManagementScreen .table__container {
+  height: calc(100% - 80px);
+  padding: 30px 30px 20px;
+}
+.UserManagementScreen .table__container .tableAction__cont {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.UserManagementScreen .table__container .tableAction__cont .addNew__btn {
+  height: 35px;
+  width: 100px;
+  font-size: 14px;
+  font-weight: bold;
+  border: unset;
+  border-radius: 7px;
+  color: #E9ECEF;
+  background-color: #2394fe;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2509803922);
+  cursor: pointer;
+}
+.UserManagementScreen .table__container .table__content .data__table .header__table {
+  background-color: #495057;
+  color: #E9ECEF;
+}
+.UserManagementScreen .table__container .table__content .data__table .table__body .table__row {
+  background-color: #E9ECEF;
+}
+.UserManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data {
+  vertical-align: middle;
+}
+.UserManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn {
+  height: 35px;
+  width: 35px;
+  font-size: 14px;
+  font-weight: bold;
+  border: unset;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2509803922);
+  color: #E9ECEF;
+  cursor: pointer;
+}
+.UserManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.update__btn {
+  background-color: #f6ac2c;
+}
+.UserManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.update__btn:hover {
+  background-color: #f4c77a;
+}
+.UserManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.info__btn {
+  background-color: #6C757D;
+}
+.UserManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.info__btn:hover {
+  background-color: #ADB5BD;
+}
+.UserManagementScreen .table__container .table__content .table__pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 /*!
  * Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -10137,10 +10209,14 @@ readers do not read off random characters that represent icons */
 }
 
 .UserManagement {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 100vh;
   width: 100vw;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: unset;
+  background-color: #F8F9FA;
 }
 
 /*# sourceMappingURL=userManagement.css.map */
