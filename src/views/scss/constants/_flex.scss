@@ -26,6 +26,13 @@
   align-items: center;
 }
 
+@mixin flex-column-start-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
 @mixin flex-between-center {
   display: flex;
   justify-content: space-between;
@@ -47,5 +54,11 @@
 @mixin flex-start-center {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flex-end-center {
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
 }

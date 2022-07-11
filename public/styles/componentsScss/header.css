@@ -66,6 +66,7 @@
   text-decoration: unset;
   color: white;
   font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .Page__header .header__right {
   display: flex;
@@ -80,6 +81,7 @@
   text-decoration: unset;
   color: white;
   font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   cursor: pointer;
 }
 .Page__header .header__right .separator {
@@ -87,6 +89,7 @@
   text-decoration: unset;
   color: white;
   font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /*# sourceMappingURL=header.css.map */

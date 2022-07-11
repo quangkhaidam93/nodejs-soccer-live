@@ -1,0 +1,55 @@
+.SideBar {
+  height: 100%;
+  width: 320px;
+  background-color: #D4A373;
+}
+.SideBar .Sidebar__logo {
+  padding: 50px 20px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.SideBar .Sidebar__logo .brand__logo {
+  width: 260px;
+}
+.SideBar .Menu__navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px 20px 35px;
+  border-top: 0.5px solid #FAEDCD;
+}
+.SideBar .Menu__navigation .menu__title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FEFAE0;
+}
+.SideBar .Menu__navigation .navigate {
+  width: 100%;
+  padding: 8px 20px;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: unset;
+  color: white;
+  cursor: pointer;
+}
+.SideBar .Menu__navigation .navigate.navi__firstChild {
+  margin-top: 50px;
+}
+.SideBar .Menu__navigation .navigate.navigate__active {
+  color: #757575;
+  background-color: #FEFAE0;
+}
+.SideBar .Menu__navigation .navigate.navigate__active:hover {
+  background-color: #FEFAE0;
+}
+.SideBar .Menu__navigation .navigate:hover {
+  background-color: #CCD5AE;
+}
+
+/*# sourceMappingURL=sideBar.css.map */
