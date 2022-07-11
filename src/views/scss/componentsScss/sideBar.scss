@@ -1,9 +1,10 @@
-@import "./../constants/_flex.scss";
+@import "./../constants/flex";
+@import "./../constants/color";
 
 .SideBar {
   height: 100%;
   width: 320px;
-  background-color: #D4A373;
+  background-color: $primary_color;
 
   .Sidebar__logo {
     padding: 50px 20px 35px;
@@ -18,12 +19,12 @@
     @include flex-column-start-start;
     width: 100%;
     padding: 20px 20px 35px;
-    border-top: 0.5px solid #FAEDCD;
+    border-top: 0.5px solid $secondary_color;
 
     .menu__title {
       font-size: 24px;
       font-weight: bold;
-      color: #FEFAE0;
+      color: $secondary_color;
     }
 
     .navigate {
@@ -34,7 +35,7 @@
       font-weight: bold;
       border-radius: 8px;
       text-decoration: unset;
-      color: white;
+      color: $secondary_color;
       cursor: pointer;
 
       &.navi__firstChild {
@@ -42,16 +43,15 @@
       }
 
       &.navigate__active {
-        color: #757575;
-        background-color: #FEFAE0;
+        background-color: $grey_3rd_color;
 
         &:hover {
-          background-color: #FEFAE0;
+          background-color: $grey_3rd_color;
         }
       }
 
       &:hover {
-        background-color: #CCD5AE;
+        background-color: $grey_4th_color;
       }
     }
   }

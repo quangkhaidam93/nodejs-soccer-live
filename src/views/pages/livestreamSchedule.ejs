@@ -2,19 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Soccer live - Lịch trực tiếp</title>
-    <link rel="stylesheet" href="/assets/styles/footer.css" />
-    <link rel="stylesheet" href="/assets/styles/header.css" />
-    <link rel="stylesheet" href="/assets/styles/homepage.css" />
+    <title>Soccer live</title>
+    <link rel="stylesheet" href="/assets/styles/componentsScss/footer.css" />
+    <link rel="stylesheet" href="/assets/styles/componentsScss/header.css" />
+    <link rel="stylesheet" href="/assets/styles/pageScss/homepage.css" />
+    <!-- CSS link (loading Semantic UI from a CDN) -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    /> -->
   </head>
   <body class="homepage__container">
     <%- include('./../components/header'); %>
-    <main>
-      <div class="ui segment">
-        <h1>At least we can see something now</h1>
-        <p>This is visual of templating through EJS</p>
-      </div>
-    </main>
+    <%- include('./../screens/homepageScreen.ejs'); %>
     <%- include('./../components/footer'); %>
   </body>
 </html>
