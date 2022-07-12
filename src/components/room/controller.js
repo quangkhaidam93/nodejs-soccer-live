@@ -18,7 +18,7 @@ const getRooms = async (req, res) => {
     const hasMore = rooms.length <= roomService.LIMIT;
 
     rooms = rooms.map((r) => formatRoomRes(r));
-  
+
     res.send(
       generateResponseForArray({
         type: statusType.SUCCESS,
@@ -28,13 +28,12 @@ const getRooms = async (req, res) => {
         offset: offset + rooms.length,
       })
     );
-  };
   }
-
+};
 
 const getRoomInfo = async (req, res) => {
   const roomId = validateRoomId(req, res);
-  
+
   let room = await roomService.findRoomById(roomId);
 
   if (!room) {
@@ -44,6 +43,7 @@ const getRoomInfo = async (req, res) => {
         message: "Không tìm thấy room này",
       })
     );
+    return;
   }
 
   room = formatRoomRes(room);
@@ -69,6 +69,7 @@ const createNewRoom = async (req, res) => {
         message: "Không thể tạo room",
       })
     );
+    return;
   }
 
   res.send(
@@ -93,6 +94,7 @@ const editRoomInfo = async (req, res) => {
         message: "Cập nhật thông tin không thành công",
       })
     );
+    return;
   }
 
   res.send(
@@ -116,6 +118,7 @@ const deleteRoom = async (req, res) => {
         message: "Xoá caster không thành công",
       })
     );
+    return;
   }
 
   res.send(

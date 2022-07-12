@@ -54,6 +54,7 @@ function generateResponseForArray({ type, arrayData, message, total, hasMore, cu
     total,
     hasMore,
     cursor,
+    offset,
   };
 }
 

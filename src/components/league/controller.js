@@ -28,6 +28,7 @@ const getLeagueInfo = async (req, res) => {
         message: "Không tìm thấy caster này",
       })
     );
+    return;
   }
 
   res.send(
@@ -51,6 +52,7 @@ const createNewLeague = async (req, res) => {
         message: "Không thể tạo caster",
       })
     );
+    return;
   }
 
   res.send(
@@ -75,6 +77,7 @@ const editLeagueInfo = async (req, res) => {
         message: "Cập nhật thông tin không thành công",
       })
     );
+    return;
   }
 
   res.send(
@@ -98,6 +101,7 @@ const deleteLeague = async (req, res) => {
         message: "Xoá league không thành công",
       })
     );
+    return;
   }
 
   res.send(

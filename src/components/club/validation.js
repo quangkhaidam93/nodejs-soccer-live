@@ -17,7 +17,7 @@ const validateClubId = (req, res) => {
 };
 
 const validateClubObject = (req, res) => {
-  const club = req.body.data;
+  const club = req.body;
 
   if (!club) {
     res.send(

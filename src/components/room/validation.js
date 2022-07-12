@@ -17,7 +17,7 @@ const validateRoomId = (req, res) => {
 };
 
 const validateRoomObject = (req, res) => {
-  const room = req.body.data;
+  const room = req.body;
 
   if (!room) {
     res.send(

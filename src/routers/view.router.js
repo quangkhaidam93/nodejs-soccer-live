@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { checkAuthenticationWeb } = require("./../utils/supportedFunction");
 
+router.get('/test', (req, res) => res.render("pages/test"));
 router.get('/', (req, res) => res.render("pages/home"));
 router.get('/lich-truc-tiep', (req, res) => {
   res.render("pages/livestreamSchedule")

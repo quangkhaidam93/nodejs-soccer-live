@@ -17,7 +17,7 @@ const validateLeagueId = (req, res) => {
 };
 
 const validateLeagueObject = (req, res) => {
-  const league = req.body.data;
+  const league = req.body;
 
   if (!league) {
     res.send(

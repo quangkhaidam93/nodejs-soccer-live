@@ -31,6 +31,7 @@ const getClubInfo = async (req, res) => {
         message: "Không tìm thấy club này",
       })
     );
+    return;
   }
 
   res.send(
@@ -54,6 +55,7 @@ const createNewClub = async (req, res) => {
         message: "Không thể tạo club",
       })
     );
+    return;
   }
 
   res.send(
@@ -82,6 +84,7 @@ const editClubInfo = async (req, res) => {
         message: "Cập nhật thông tin không thành công",
       })
     );
+    return;
   }
 
   res.send(
@@ -105,6 +108,7 @@ const deleteClub = async (req, res) => {
         message: "Xoá club không thành công",
       })
     );
+    return;
   }
 
   res.send(

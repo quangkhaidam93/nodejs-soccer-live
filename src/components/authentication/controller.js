@@ -41,6 +41,9 @@ const signIn = async (req, res) => {
       generateResponse({
         type: statusType.SUCCESS,
         message: "Đăng nhập thành công",
+        data: {
+          token,
+        }
       })
     );
   }
@@ -65,7 +68,7 @@ const signUp = async (req, res) => {
     username,
     password: hashedPassword,
     nickname,
-    roleId: roleTypes.USERå
+    roleId: roleTypes.USER,
   });
 
   const createdUser = await user.save();
@@ -77,6 +80,9 @@ const signUp = async (req, res) => {
     generateResponse({
       type: statusType.CREATED,
       message: "Đăng kí thành công",
+      data: {
+        token,
+      }
     })
   );
 };

@@ -31,6 +31,7 @@ const getCasterInfo = async (req, res) => {
         message: "Không tìm thấy caster này",
       })
     );
+    return;
   }
 
   res.send(
@@ -54,6 +55,7 @@ const createNewCaster = async (req, res) => {
         message: "Không thể tạo caster",
       })
     );
+    return;
   }
 
   res.send(
@@ -82,6 +84,7 @@ const editCasterInfo = async (req, res) => {
         message: "Cập nhật thông tin không thành công",
       })
     );
+    return;
   }
 
   res.send(
@@ -105,6 +108,7 @@ const deleteCaster = async (req, res) => {
         message: "Xoá caster không thành công",
       })
     );
+    return;
   }
 
   res.send(

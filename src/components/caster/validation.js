@@ -17,7 +17,7 @@ const validateCasterId = (req, res) => {
 };
 
 const validateCasterObject = (req, res) => {
-  const caster = req.body.data;
+  const caster = req.body;
 
   if (!caster) {
     res.send(
