@@ -2,14 +2,14 @@
   <div class="screen__header"></div>
   <div class="table__container">
     <div class="tableAction__cont">
-      <button class="addNew__btn">+ Thêm mới</button>
+      <button class="addNew__btn" data-bs-toggle="modal" data-bs-target="#addRoleModal">+ Thêm mới</button>
     </div>
     <div class="table__content">
       <table class="table data__table">
         <thead class="header__table">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Tên giải</th>
+            <th scope="col">Tên vai trò</th>
             <th scope="col">Ngày tạo</th>
             <th scope="col">Ngày thay đổi</th>
             <th scope="col"></th>
@@ -135,6 +135,30 @@
           </li>
         </ul>
       </nav> -->
+    </div>
+  </div>
+</div>
+
+<!-- Create Modal -->
+<div class="modal fade" id="addRoleModal" tabindex="-1" aria-labelledby="addRoleModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addRoleModalTitle">Thêm mới vai trò</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="AddLeagueManagementDialog">
+          <div class="dialogForm__input">
+            <div class="input__label">Tên vai trò</div>
+            <input id="leagueName" type="text" class="leagueName__input"></input>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" onclick="createNewRoleSubmit()">Thêm</button>
+      </div>
     </div>
   </div>
 </div>
