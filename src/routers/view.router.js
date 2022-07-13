@@ -10,6 +10,7 @@ router.get('/lich-truc-tiep', (req, res) => {
 router.get('/highlights', (req, res) => res.render("pages/highlights"));
 router.get('/admin/login', (req, res) => res.render("pages/loginAdmin"));
 router.get('/admin/quan-li-user', (req, res) => res.render("pages/userManagement"));
+router.get('/admin/quan-li-caster', (req, res) => res.render("pages/casterManagement"));
 router.get('/chat', (req, res) => res.render("chat"));
 router.get('/admin', (req, res) => {
   res.redirect("admin/login");
