@@ -2,7 +2,7 @@
   <div class="screen__header"></div>
   <div class="table__container">
     <div class="tableAction__cont">
-      <button class="addNew__btn">+ Thêm mới</button>
+      <button class="addNew__btn" data-bs-toggle="modal" data-bs-target="#addClubModal">+ Thêm mới</button>
     </div>
     <div class="table__content">
       <table class="table data__table">
@@ -129,7 +129,7 @@
           </tr>
         </tbody>
       </table>
-      <nav class="table__pagination" aria-label="Page navigation example">
+      <!-- <nav class="table__pagination" aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item">
             <a class="page-link" href="#" aria-label="Previous">
@@ -145,7 +145,35 @@
             </a>
           </li>
         </ul>
-      </nav>
+      </nav> -->
+    </div>
+  </div>
+</div>
+
+<!-- Create Modal -->
+<div class="modal fade" id="addClubModal" tabindex="-1" aria-labelledby="addClubModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addClubModalTitle">Thêm mới CLB</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="AddClubManagementDialog">
+          <div class="dialogForm__input">
+            <div class="input__label">Tên CLB</div>
+            <input id="clubName" type="text" class="clubName__input"></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Hình ảnh</div>
+            <input id="clubImage" type="file" class="clubName__input"></input>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" onclick="createNewClub">Thêm</button>
+      </div>
     </div>
   </div>
 </div>
