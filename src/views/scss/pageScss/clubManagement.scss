@@ -1,13 +1,13 @@
 @import './../constants/flex';
 @import './../constants/color';
-@import './../screenScss/casterManagementScreen';
+@import './../screenScss/clubManagementScreen';
 
 @import "./../../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "./../../../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
 @import "./../../../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 @import "./../../../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
 
-.CasterManagement {
+.ClubManagement {
   @include flex-between-center;
   height: 100vh;
   width: 100vw;
