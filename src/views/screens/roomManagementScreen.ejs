@@ -2,7 +2,7 @@
   <div class="screen__header"></div>
   <div class="table__container">
     <div class="tableAction__cont">
-      <button class="addNew__btn">+ Thêm mới</button>
+      <button class="addNew__btn" data-bs-toggle="modal" data-bs-target="#addRoomModal">+ Thêm mới</button>
     </div>
     <div class="table__content">
       <table class="table data__table">
@@ -179,6 +179,70 @@
           </li>
         </ul>
       </nav> -->
+    </div>
+  </div>
+</div>
+
+<!-- Create Modal -->
+<div class="modal fade" id="addRoomModal" tabindex="-1" aria-labelledby="addRoomModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addRoomModalTitle">Thêm mới phòng</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="AddRoomManagementDialog">
+          <div class="dialogForm__input">
+            <div class="input__label">Tên phòng</div>
+            <input id="roomName" type="text" class="roomName__input"></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Link URL livestream</div>
+            <input id="linkURL" type="text" class="roomName__input"></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Chọn caster</div>
+            <select class="roomName__input" id="casterName" class="form-select" aria-label="Chọn caster">
+              <option selected>Selected data</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Chọn giải</div>
+            <select class="roomName__input" id="leagueName" class="form-select" aria-label="Chọn giải">
+              <option selected>Selected data</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Chọn đội 1</div>
+            <select class="roomName__input" id="clubName_1" class="form-select" aria-label="Chọn đội 1">
+              <option selected>Selected data</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Chọn đội 2</div>
+            <select class="roomName__input" id="clubName_2" class="form-select" aria-label="Chọn đội 2">
+              <option selected>Selected data</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" onclick="createNewRoomSubmit()">Thêm</button>
+      </div>
     </div>
   </div>
 </div>
