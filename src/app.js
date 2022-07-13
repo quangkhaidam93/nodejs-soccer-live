@@ -52,6 +52,8 @@ app.use("/assets", express.static(path.join(__dirname, "../public")));
 // serve js
 app.use(express.static(path.join(__dirname, "./views/")));
 
+app.use("/admin/views", express.static(path.join(__dirname, "./views/")));
+
 // serve images
 // app.user("/images", express.static(path.join(__dirname, '../public/images')))
 
