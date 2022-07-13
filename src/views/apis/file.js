@@ -7,8 +7,8 @@ async function uploadImage(image) {
     });
 
     const { data } = responseHandler(response);
-    console.log(data);
+    return data;
   } catch (err) {}
 }
 
-uploadImage();
+// uploadImage();

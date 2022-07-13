@@ -3,7 +3,7 @@ async function getAllCasters() {
     const response = await client.get("/casters");
 
     const { arrayData } = responseHandler(response);
-    console.log(arrayData);
+    return arrayData;
   } catch (err) {}
 }
 
