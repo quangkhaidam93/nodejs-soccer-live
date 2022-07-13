@@ -1,25 +1,25 @@
-.UserManagementScreen {
+.CasterManagementScreen {
   flex: 1;
   height: 100%;
   width: 100%;
 }
-.UserManagementScreen .screen__header {
+.CasterManagementScreen .screen__header {
   height: 80px;
   background-color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 10px 20px;
 }
-.UserManagementScreen .table__container {
+.CasterManagementScreen .table__container {
   height: calc(100% - 80px);
   padding: 30px 30px 20px;
 }
-.UserManagementScreen .table__container .tableAction__cont {
+.CasterManagementScreen .table__container .tableAction__cont {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-bottom: 20px;
 }
-.UserManagementScreen .table__container .tableAction__cont .addNew__btn {
+.CasterManagementScreen .table__container .tableAction__cont .addNew__btn {
   height: 35px;
   width: 100px;
   font-size: 14px;
@@ -31,17 +31,17 @@
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2509803922);
   cursor: pointer;
 }
-.UserManagementScreen .table__container .table__content .data__table .header__table {
+.CasterManagementScreen .table__container .table__content .data__table .header__table {
   background-color: #495057;
   color: #E9ECEF;
 }
-.UserManagementScreen .table__container .table__content .data__table .table__body .table__row {
+.CasterManagementScreen .table__container .table__content .data__table .table__body .table__row {
   background-color: #E9ECEF;
 }
-.UserManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data {
+.CasterManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data {
   vertical-align: middle;
 }
-.UserManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn {
+.CasterManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn {
   height: 35px;
   width: 35px;
   font-size: 14px;
@@ -52,19 +52,19 @@
   color: #E9ECEF;
   cursor: pointer;
 }
-.UserManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.update__btn {
+.CasterManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.update__btn {
   background-color: #f6ac2c;
 }
-.UserManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.update__btn:hover {
+.CasterManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.update__btn:hover {
   background-color: #f4c77a;
 }
-.UserManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.info__btn {
+.CasterManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.info__btn {
   background-color: #6C757D;
 }
-.UserManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.info__btn:hover {
+.CasterManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.info__btn:hover {
   background-color: #ADB5BD;
 }
-.UserManagementScreen .table__container .table__content .table__pagination {
+.CasterManagementScreen .table__container .table__content .table__pagination {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -10208,7 +10208,7 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
-.UserManagement {
+.CasterManagement {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10219,4 +10219,4 @@ readers do not read off random characters that represent icons */
   background-color: #F8F9FA;
 }
 
-/*# sourceMappingURL=userManagement.css.map */
+/*# sourceMappingURL=casterManagement.css.map */

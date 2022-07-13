@@ -1,19 +1,17 @@
 @import './../constants/flex';
 @import './../constants/color';
-@import './../screenScss/userManagementScreen';
+@import './../screenScss/casterManagementScreen';
 
 @import "./../../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "./../../../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
 @import "./../../../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 @import "./../../../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
 
-.UserManagement {
+.CasterManagement {
   @include flex-between-center;
   height: 100vh;
   width: 100vw;
-  font-family: 'Segoe UI', Tahoma, Geneva,
-    Verdana,
-    sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: unset;
   background-color: $grey_5th_color;
 }

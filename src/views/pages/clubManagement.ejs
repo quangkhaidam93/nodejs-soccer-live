@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Admin - Quản lí người dùng</title>
-    <link rel="stylesheet" href="/assets/styles/pageScss/userManagement.css" />
+    <title>Admin - Quản lí CLB</title>
+    <link rel="stylesheet" href="/assets/styles/pageScss/clubManagement.css" />
     <link rel="stylesheet" href="/assets/styles/componentsScss/sideBar.css" />
     <!-- Bootstrap -->
     <link 
@@ -12,9 +12,9 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
       crossorigin="anonymous">
   </head>
-  <body class="UserManagement">
-    <%- include('./../components/sideBar.ejs', {tabChoose: 'user'}); %>
-    <%- include('./../screens/userManagementScreen.ejs'); %>
+  <body class="ClubManagement">
+    <%- include('./../components/sideBar.ejs', {tabChoose: 'club'}); %>
+    <%- include('./../screens/clubManagementScreen.ejs'); %>
   </body>
   <script 
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
