@@ -2,7 +2,7 @@
   <div class="screen__header"></div>
   <div class="table__container">
     <div class="tableAction__cont">
-      <button class="addNew__btn">+ Thêm mới</button>
+      <button class="addNew__btn" data-bs-toggle="modal" data-bs-target="#addCasterModal">+ Thêm mới</button>
     </div>
     <div class="table__content">
       <table class="table data__table">
@@ -146,6 +146,34 @@
           </li>
         </ul>
       </nav>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="addCasterModal" tabindex="-1" aria-labelledby="addCasterModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addCasterModalTitle">Thêm mới caster</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="AddCasterBodyDialog">
+          <div class="dialogForm__input">
+            <div class="input__label">Họ tên</div>
+            <input id="casterName" type="text" class="casterName__input"></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Avatar</div>
+            <input id="casterAvatarImage" type="file" class="casterName__input"></input>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" onclick="createNewCaster">Thêm</button>
+      </div>
     </div>
   </div>
 </div>
