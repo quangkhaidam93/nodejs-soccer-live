@@ -7,35 +7,94 @@
   </div>
   <div class="Menu__navigation">
     <div class="menu__title">Bảng điều khiển</div>
-    <a 
-      class="navigate navigate__active navi__firstChild"
-      href="/admin/quan-li-user">
-      Quản lí người dùng
-    </a>
-    <a 
-      class="navigate" 
-      href="/admin/quan-li-caster">
-      Quản lí caster
-    </a>
-    <a 
-      class="navigate"
-      href="/admin/quan-li-clb">
-      Quản lí CLB
-    </a>
-    <a 
-      class="navigate" 
-      href="admin/quan-li-league">
-      Quản lí giải
-    </a>
-    <a 
-      class="navigate" 
-      href="/admin/quan-li-room">
-      Quản lí phòng
-    </a>
-    <a 
-      class="navigate" 
-      href="/admin/quan-li-role">
-      Quản lí role
-    </a>
+    <!-- user tab -->
+    <% if (tabChoose === 'user') { %>
+      <a 
+        class="navigate navigate__active navi__firstChild"
+        href="/admin/quan-li-user">
+        Quản lí người dùng
+      </a>
+    <% } else { %>
+      <a 
+        class="navigate navi__firstChild"
+        href="/admin/quan-li-user">
+        Quản lí người dùng
+      </a>
+    <% } %>
+    
+    <!-- caster tab -->
+    <% if (tabChoose === 'caster') { %>
+      <a 
+        class="navigate navigate__active" 
+        href="/admin/quan-li-caster">
+        Quản lí caster
+      </a>
+    <% } else { %>
+      <a 
+        class="navigate" 
+        href="/admin/quan-li-caster">
+        Quản lí caster
+      </a>
+    <% } %>
+
+    <!-- club tab -->
+    <% if (tabChoose === 'club') { %>
+      <a 
+        class="navigate navigate__active"
+        href="/admin/quan-li-clb">
+        Quản lí CLB
+      </a>
+    <% } else { %>
+      <a 
+        class="navigate"
+        href="/admin/quan-li-clb">
+        Quản lí CLB
+      </a>
+    <% } %>
+    
+    <!-- league tab -->
+    <% if (tabChoose === 'league') { %>
+      <a 
+        class="navigate navigate__active" 
+        href="admin/quan-li-league">
+        Quản lí giải
+      </a>
+    <% } else { %>
+      <a 
+        class="navigate" 
+        href="admin/quan-li-league">
+        Quản lí giải
+      </a>
+    <% } %>
+  
+    <!-- room tab -->
+    <% if (tabChoose === 'room') { %>
+      <a 
+        class="navigate navigate__active" 
+        href="/admin/quan-li-room">
+        Quản lí phòng
+      </a>
+    <% } else { %>
+      <a 
+        class="navigate" 
+        href="/admin/quan-li-room">
+        Quản lí phòng
+      </a>
+    <% } %>
+
+    <!-- role tab -->
+    <% if (tabChoose === 'role') { %>
+      <a 
+        class="navigate navigate__active" 
+        href="/admin/quan-li-role">
+        Quản lí role
+      </a>
+    <% } else { %>
+      <a 
+        class="navigate" 
+        href="/admin/quan-li-role">
+        Quản lí role
+      </a>
+    <% } %>
   </div>
 </div>
