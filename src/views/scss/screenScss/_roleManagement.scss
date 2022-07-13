@@ -1,0 +1,89 @@
+@import './../constants/color';
+
+.RoleManagementScreen {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+
+  .screen__header {
+    height: 80px;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px 20px;
+  }
+
+  .table__container {
+    height: calc(100% - 80px);
+    padding: 30px 30px 20px;
+
+    .tableAction__cont {
+      @include flex-end-center;
+
+      margin-bottom: 20px;
+
+      .addNew__btn {
+        height: 35px;
+        width: 100px;
+        font-size: 14px;
+        font-weight: bold;
+        border: unset;
+        border-radius: 7px;
+        color: $secondary_color;
+        background-color: #2394fe;
+        box-shadow: 2px 2px 8px #00000040;
+        cursor: pointer;
+      }
+    }
+
+    .table__content {
+      .data__table {
+        .header__table {
+          background-color: $primary_color;
+          color: $secondary_color;
+        }
+
+        .table__body {
+          .table__row {
+            background-color: $secondary_color;
+
+            .each__data {
+              vertical-align: middle;
+
+              .action__btn {
+                height: 35px;
+                width: 35px;
+                font-size: 14px;
+                font-weight: bold;
+                border: unset;
+                border-radius: 50%;
+                box-shadow: 2px 2px 8px #00000040;
+                color: $secondary_color;
+                cursor: pointer;
+
+                &.update__btn {
+                  background-color: #f6ac2c;
+
+                  &:hover {
+                    background-color: #f4c77a;
+                  }
+                }
+
+                &.info__btn {
+                  background-color: $grey_4th_color;
+
+                  &:hover {
+                    background-color: $grey_6th_color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .table__pagination {
+        @include flex-end-center;
+      }
+    }
+  }
+}
