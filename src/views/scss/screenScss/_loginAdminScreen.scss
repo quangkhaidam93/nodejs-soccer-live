@@ -1,4 +1,5 @@
 @import './../constants/flex';
+@import './../constants/color';
 
 .loginAdminScreen {
   background: #F0F0F0;
@@ -15,7 +16,7 @@
     font-weight: bold;
 
     color: white;
-    background: #9FE8FF;
+    background: $primary_color;
   }
 
   .login__cont {
@@ -56,7 +57,7 @@
         border: unset;
         border-radius: 8px;
         color: #ffffff;
-        background-color: #A2D2FF;
+        background-color: $blue-primary-btn;
         box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
         cursor: pointer;
       }

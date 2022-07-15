@@ -14,7 +14,7 @@
   font-size: 24px;
   font-weight: bold;
   color: white;
-  background: #9FE8FF;
+  background: #495057;
 }
 .loginAdminScreen .login__cont {
   padding: 15px 30px;
@@ -54,7 +54,7 @@
   border: unset;
   border-radius: 8px;
   color: #ffffff;
-  background-color: #A2D2FF;
+  background-color: #076AFF;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
