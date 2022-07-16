@@ -6,9 +6,9 @@ async function uploadImageFile() {
 }
 
 async function createNewLeagueSubmit() {
-  const casterName = document.getElementById('leagueName').value;
+  const leagueName = document.getElementById('leagueName').value;
   const imageUrl = await uploadImageFile();
-  createNewLeague({ name: casterName, image: imageUrl }).finally(() => {
+  createNewLeague({ name: leagueName, image: imageUrl }).finally(() => {
     getAllLeagues();
   });
 }

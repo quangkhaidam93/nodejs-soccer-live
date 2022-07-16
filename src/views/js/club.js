@@ -6,9 +6,9 @@ async function uploadImageFile() {
 }
 
 async function createNewClubSubmit() {
-  const casterName = document.getElementById('clubName').value;
+  const clubName = document.getElementById('clubName').value;
   const imageUrl = await uploadImageFile();
-  createNewClub({ name: casterName, image: imageUrl }).finally(() => {
+  createNewClub({ name: clubName, image: imageUrl }).finally(() => {
     getAllClubs();
   });
 }
