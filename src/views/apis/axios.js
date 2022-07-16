@@ -1,5 +1,5 @@
 const client = axios.create({
-  baseURL: "http://localhost:8080/api",
+  baseURL: process.env.API_DOMAIN,
   headers: {
     'Authorization': localStorage.getItem('token') ?? '',
   } 
