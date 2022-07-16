@@ -3,8 +3,13 @@ const { findRoleNameById } = require('../role/service');
 const { roleTypes } = require('../../models/role.model');
 
 const findUserByUsername = async (username) => {
-  const user = await User.findOne({ where: { username } });
-  return user;
+  try {
+    const user = await User.findOne({ where: { username } });
+    return user;
+  } catch (err) {
+    console.log('findUserByUsername error', err);
+    return null;
+  }
 }
 
 const checkUserIsAdmin = async (id) => {

@@ -14,3 +14,6 @@ stored/
 
 #upload images
 /public/images/
+
+#read configs
+/public/configs
