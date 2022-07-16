@@ -17,9 +17,10 @@ async function signup(username, password, nickname) {
 
     const { data: { token } } = responseHandler(response);
     // TODO: Xử lí lưu token vào local storage
-    console.log(token);
+    localStorage.setItem('token', token);
+    console.log('sign up success', token);
   } catch (err) {
-
+    console.log("🚀 ~ file: auth.js ~ line 23 ~ signup ~ err", err)
   }
 }
 

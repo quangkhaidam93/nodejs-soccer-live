@@ -7,7 +7,7 @@ async function uploadImageFile() {
 
 async function createNewCasterSubmit() {
   const casterName = document.getElementById('casterName').value;
-  const imageUrl = await uploadImageFile(casterAvatarImage);
+  const imageUrl = await uploadImageFile();
   createNewCaster({ fullName: casterName, avatar: imageUrl }).finally(() => {
     getListCasterData();
   });
