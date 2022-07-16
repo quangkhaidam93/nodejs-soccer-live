@@ -7,6 +7,14 @@ async function uploadImageFile() {
 
 async function createNewCasterSubmit() {
   const casterName = document.getElementById('casterName').value;
-  const imageUrl = await uploadImageFile(casterAvatarImage);
-  createNewCaster({ fullName: casterName, avatar: imageUrl });
+  const imageUrl = await uploadImageFile();
+  createNewCaster({ fullName: casterName, avatar: imageUrl }).finally(() => {
+    getListCasterData();
+  });
+}
+
+let listCaster = [];
+async function getListCasterData() {
+  listCaster = getAllCasters();
+  console.log("🚀 ~ file: casters.js ~ line 16 ~ getListCasterData ~ listCaster", listCaster)
 }
