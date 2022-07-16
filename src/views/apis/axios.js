@@ -1,5 +1,5 @@
 const client = axios.create({
-  baseURL: process.env.API_DOMAIN,
+  baseURL: 'https://atzstore.net/api',
   headers: {
     'Authorization': localStorage.getItem('token') ?? '',
   } 
