@@ -10,7 +10,7 @@ const socketEvents = {
   }
 }
 
-const socket = io('https://atzstore.net/');
+const socket = io();
 
 const inboxPeople = document.querySelector(".inbox__people");
 

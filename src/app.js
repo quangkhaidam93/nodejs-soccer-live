@@ -88,6 +88,8 @@ db.sync()
 
       const httpsServer = https.createServer(credentials, app);
 
+      socketConnection(httpsServer);
+
       httpsServer.listen(envConfigs.serverPortWithSSL, function () {
         console.log(
           "Server is running with SSL on port",
