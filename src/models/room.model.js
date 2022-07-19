@@ -52,6 +52,10 @@ const Room = db.define("Rooms", {
     onUpdate: "CASCADE",
     onDelete: "SET NULL",
   },
+  streamUrl: {
+    allow: false,
+    type: Sequelize.STRING,
+  },
   createdAt: {
     allowNull: false,
     type: Sequelize.DATE,
