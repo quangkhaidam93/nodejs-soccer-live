@@ -10,15 +10,7 @@ const socketEvents = {
   }
 }
 
-const socket = io('https://atzstore.net/', {
-  reconnectionDelay: 1000,
-  reconnection: true,
-  reconnectionAttemps: 10,
-  transports: ['websocket'],
-  agent: false,
-  upgrade: false,
-  rejectUnauthorized: false
-});
+const socket = io('https://atzstore.net/');
 
 const inboxPeople = document.querySelector(".inbox__people");
 
