@@ -24,7 +24,6 @@ function submitSignUp() {
   const confirmPW = document.getElementById("confirm__password").value;
   const nickname = document.getElementById("nickname").value;
   if (checkUsernameValue(username) && checkPassword(password, confirmPW)) {
-    console.log('den day confirm')
     signup(username, password, nickname);
   }
   return
