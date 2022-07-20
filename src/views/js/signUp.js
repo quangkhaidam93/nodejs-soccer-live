@@ -4,15 +4,11 @@ function checkUsernameValue(username) {
 
 function checkPassword(password, confirmPW) {
   if (password.length < 10 || !password) {
-    alert("Please input password");
-    return false;
-  }
-  if (confirmPW.length < 10 || !confirmPW) {
-    alert("Please input confirm password");
+    alert("Mật khẩu phải hơn 10 kí tự");
     return false;
   }
   if (password !== confirmPW) {
-    alert("Password and confirm password is not match");
+    alert("Mật khẩu và mật khẩu xác nhận không khớp nhau");
     return false;
   }
   return true;
