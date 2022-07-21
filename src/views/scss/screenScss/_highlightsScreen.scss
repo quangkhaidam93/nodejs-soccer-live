@@ -1,0 +1,80 @@
+@import './../constants/flex';
+
+.HighlightsScreen {
+  min-height: calc(100vh - 100px);
+  background-image: url("//sta.cvndnss.com/xoilac2_web/assets/xoilac2/img/banner.jpg");
+
+  .highlight__title {
+    margin-top: unset;
+    padding-top: 100px;
+    padding-left: 60px;
+    color: white;
+  }
+
+  .highlight__container {
+    @include flex-start-center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 30px;
+    background-color: #efefef;
+
+    .highlight__content {
+      @include flex-column-between-center;
+      width: 250px;
+      height: 235px;
+      border-radius: 8px;
+      box-shadow: 0 4px 4px 0 #ccc;
+      margin-bottom: 60px;
+      margin-left: 60px;
+      background-color: #ffffff;
+      text-decoration: unset;
+
+      .highlight__top {
+        .highlight__image {
+          width: 100%;
+          height: 145px;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+
+        .highlight__text {
+          box-sizing: border-box;
+          font-family: Roboto, MYRIADPRO-SEMIBOLD, PingFang SC,
+            tahoma, arial, 'Microsoft Yahei', 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+          color: black;
+          font-weight: bold;
+          font-size: 12px;
+          padding: 5px 10px;
+          word-break: break-word;
+        }
+      }
+
+      .highlight__bottom {
+        @include flex-between-center;
+        width: 100%;
+        padding-bottom: 10px;
+
+        .leftside {
+          box-sizing: border-box;
+          font-family: Roboto, MYRIADPRO-SEMIBOLD, PingFang SC,
+            tahoma, arial, 'Microsoft Yahei', 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+          color: black;
+          font-size: 12px;
+          padding: 5px 10px;
+          word-break: break-word;
+          color: red;
+        }
+
+        .rightside {
+          box-sizing: border-box;
+          font-family: Roboto, MYRIADPRO-SEMIBOLD, PingFang SC,
+            tahoma, arial, 'Microsoft Yahei', 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+          color: black;
+          font-size: 12px;
+          padding: 5px 10px;
+          word-break: break-word;
+        }
+      }
+    }
+  }
+}
