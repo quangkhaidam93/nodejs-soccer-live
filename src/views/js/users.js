@@ -1,6 +1,14 @@
 async function getListUserData() {
   const fetchedUsers = await getAllUsers();
   const listUser = [...fetchedUsers];
+  // remove child element
+  const tableBodyRemove = document.getElementById("table-body");
+  var child = tableBodyRemove.lastElementChild; 
+  while (child) {
+      tableBodyRemove.removeChild(child);
+      child = tableBodyRemove.lastElementChild;
+  }
+  // add list info 
   listUser.forEach((u, idx) => {
     const tableBody = document.getElementById("table-body");
     tableBody.innerHTML += '<tr class="table__row" ><th class="each__data" scope="row" >' + (idx + 1) + '</th>' +
@@ -18,3 +26,11 @@ async function getListUserData() {
 }
 
 getListUserData();
+
+async function updateUserInfoSubmit() {
+
+}
+
+async function onDeleteUserConfirm() {
+
+}

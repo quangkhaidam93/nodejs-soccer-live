@@ -107,3 +107,152 @@
     </div>
   </div>
 </div>
+
+
+<!-- Update Modal -->
+<div class="modal fade" id="updateRoomModal" tabindex="-1" aria-labelledby="updateRoomModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateRoomModalTitle">Cập nhật thông tin phòng</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="AddRoomManagementDialog">
+          <div class="dialogForm__input">
+            <div class="input__label">Tên phòng</div>
+            <input id="roomName" type="text" class="roomName__input"></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Link URL livestream</div>
+            <input id="roomLinkURL" type="text" class="roomName__input"></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Chọn caster</div>
+            <select class="roomName__input" id="casterName" class="form-select" aria-label="Chọn caster">
+              <option selected>Selected data</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Chọn giải</div>
+            <select class="roomName__input" id="leagueName" class="form-select" aria-label="Chọn giải">
+              <option selected>Selected data</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Chọn đội 1</div>
+            <select class="roomName__input" id="clubName_1" class="form-select" aria-label="Chọn đội 1">
+              <option selected>Selected data</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Chọn đội 2</div>
+            <select class="roomName__input" id="clubName_2" class="form-select" aria-label="Chọn đội 2">
+              <option selected>Selected data</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" onclick="updateRoomSubmit()">Cập nhật</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Info modal -->
+<div class="modal fade" id="infoRoomModal" tabindex="-1" aria-labelledby="infoRoomModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoRoomModalTitle">Thông tin phòng</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="AddRoomManagementDialog">
+          <div class="dialogForm__input">
+            <div class="input__label">Tên phòng</div>
+            <input id="roomName" type="text" class="roomName__input" disbaled></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Link URL livestream</div>
+            <input id="roomLinkURL" type="text" class="roomName__input" disbaled></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Chọn caster</div>
+            <select class="roomName__input" id="casterName" class="form-select" aria-label="Chọn caster" disbaled>
+              <option selected>Selected data</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Chọn giải</div>
+            <select class="roomName__input" id="leagueName" class="form-select" aria-label="Chọn giải" disbaled>
+              <option selected>Selected data</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Chọn đội 1</div>
+            <select class="roomName__input" id="clubName_1" class="form-select" aria-label="Chọn đội 1" disbaled>
+              <option selected>Selected data</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Chọn đội 2</div>
+            <select class="roomName__input" id="clubName_2" class="form-select" aria-label="Chọn đội 2" disbaled>
+              <option selected>Selected data</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete modal -->
+<div class="modal fade" id="deleteRoomModal" tabindex="-1" aria-labelledby="deleteRoomModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteRoomModalTitle">Xác nhận xóa phòng</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="BodyDialog">
+          <div>Bạn có chắc chắn xóa phòng <span class="red__alert">[name]</span> này không ?</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary btn-danger" onclick="onDeleteRoomConfirm()">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -67,3 +67,79 @@
     </div>
   </div>
 </div>
+
+<!-- Update Modal -->
+<div class="modal fade" id="updateClubModal" tabindex="-1" aria-labelledby="updateClubModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateClubModalTitle">Cập nhật thông tin CLB</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="AddClubManagementDialog">
+          <div class="dialogForm__input">
+            <div class="input__label">Tên CLB</div>
+            <input id="clubName" type="text" class="clubName__input"></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Hình ảnh</div>
+            <input id="clubImage" type="file" class="clubName__input"></input>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" onclick="updateClubSubmit()">Cập nhật</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Info modal -->
+<div class="modal fade" id="infoClubModal" tabindex="-1" aria-labelledby="infoClubModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoClubModalTitle">Thông tin CLB</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="AddClubManagementDialog">
+          <div class="dialogForm__input">
+            <div class="input__label">Tên CLB</div>
+            <input id="clubName" type="text" class="clubName__input" disbaled></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Hình ảnh</div>
+            <input id="clubImage" type="file" class="clubName__input" disbaled></input>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete modal -->
+<div class="modal fade" id="deleteClubModal" tabindex="-1" aria-labelledby="deleteClubModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteClubModalTitle">Xác nhận xóa CLB</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="BodyDialog">
+          <div>Bạn có chắc chắn xóa CLB <span class="red__alert">[name]</span> này không ?</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary btn-danger" onclick="onDeleteClubConfirm()">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>

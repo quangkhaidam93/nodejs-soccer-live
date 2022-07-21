@@ -26,7 +26,7 @@ async function getListCasterData() {
   // add list info 
   listCaster.forEach((c, idx) => {
     const tableBody = document.getElementById("table-body");
-    tableBody.innerHTML += '<tr id="table__row" class="table__row" ><th class="each__data" scope="row" >' + (idx + 1) + '</th>' +
+    tableBody.innerHTML += '<tr class="table__row" ><th class="each__data" scope="row" >' + (idx + 1) + '</th>' +
       '<td class="each__data" >' + c.fullName + '</td>' +
       '<td class="each__data" >' + c.avatar + '</td>' +
       '<td class="each__data" >' + moment(c.createdAt).format('DD/MM/YYYY') + '</td>' +
@@ -34,10 +34,20 @@ async function getListCasterData() {
       '<td class="each__data">' + 
         '<button class="action__btn update__btn" data-bs-toggle="modal" data-bs-target="#updateCasterModal">u</button>' +
         '<button class="action__btn info__btn" data-bs-toggle="modal" data-bs-target="#infoCasterModal">i</button>' +
-        '<button class="action__btn delete__btn" data-bs-toggle="modal" data-bs-target="#deleteUserModal">d</button>' +
+        '<button class="action__btn delete__btn" data-bs-toggle="modal" data-bs-target="#deleteCasterModal">d</button>' +
       '</td>' +
       '</tr>'
   })
 }
 
 getListCasterData();
+
+// update caster
+async function updateCasterSubmit() {
+
+}
+
+// xóa caster
+async function onDeleteCasterConfirm() {
+
+}

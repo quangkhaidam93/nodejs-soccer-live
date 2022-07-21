@@ -51,6 +51,10 @@
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2509803922);
   color: #E9ECEF;
   cursor: pointer;
+  margin-left: 5px;
+}
+.ClubManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn:first-child {
+  margin-left: unset;
 }
 .ClubManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.update__btn {
   background-color: #f6ac2c;
@@ -63,6 +67,12 @@
 }
 .ClubManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.info__btn:hover {
   background-color: #ADB5BD;
+}
+.ClubManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.delete__btn {
+  background-color: #ff6c6c;
+}
+.ClubManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn.delete__btn:hover {
+  background-color: #ff9797;
 }
 .ClubManagementScreen .table__container .table__content .table__pagination {
   display: flex;

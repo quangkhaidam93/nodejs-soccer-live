@@ -59,6 +59,11 @@
                 box-shadow: 2px 2px 8px #00000040;
                 color: $secondary_color;
                 cursor: pointer;
+                margin-left: 5px;
+
+                &:first-child {
+                  margin-left: unset;
+                }
 
                 &.update__btn {
                   background-color: #f6ac2c;
@@ -73,6 +78,14 @@
 
                   &:hover {
                     background-color: $grey_6th_color;
+                  }
+                }
+
+                &.delete__btn {
+                  background-color: #ff6c6c;
+
+                  &:hover {
+                    background-color: #ff9797;
                   }
                 }
               }

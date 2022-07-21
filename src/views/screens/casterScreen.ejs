@@ -40,7 +40,7 @@
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Add Modal -->
 <div class="modal fade" id="addCasterModal" tabindex="-1" aria-labelledby="addCasterModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -68,7 +68,7 @@
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Update Modal -->
 <div class="modal fade" id="updateCasterModal" tabindex="-1" aria-labelledby="updateCasterModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -101,27 +101,18 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="infoCasterModalTitle">Thông tin người dùng</h5>
+        <h5 class="modal-title" id="infoCasterModalTitle">Thông tin caster</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="BodyDialog">
+        <div class="updateCasterBodyDialog">
           <div class="dialogForm__input">
             <div class="input__label">Họ tên</div>
-            <input id="casterName" type="text" class="casterName__input" disabled></input>
+            <input id="casterName" type="text" class="casterName__input" disbaled></input>
           </div>
           <div class="dialogForm__input">
-            <div class="input__label">Nickname</div>
-            <input id="casterName" type="text" class="casterName__input" disabled></input>
-          </div>
-          <div class="dialogForm__input">
-            <div class="input__label">Vai trò</div>
-            <select class="role__input" id="role" class="form-select" aria-label="Chọn vai trò" disabled>
-              <option selected>Selected data</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
+            <div class="input__label">Avatar</div>
+            <input id="casterAvatarImage" type="file" class="casterName__input" disbaled></input>
           </div>
         </div>
       </div>
@@ -133,21 +124,21 @@
 </div>
 
 <!-- Delete modal -->
-<div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="deleteUserModal" aria-hidden="true">
+<div class="modal fade" id="deleteCasterModal" tabindex="-1" aria-labelledby="deleteCasterModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="deleteUserModalTitle">Xác nhận xóa người dùng</h5>
+        <h5 class="modal-title" id="deleteCasterModalTitle">Xác nhận xóa caster</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="BodyDialog">
-          <div>Bạn có chắc chắn xóa người dùng <span class="red__alert">[name]</span> này không ?</div>
+          <div>Bạn có chắc chắn xóa caster <span class="red__alert">[name]</span> này không ?</div>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-        <button type="button" class="btn btn-primary btn-danger" onclick="onDeleteUserConfirm()">Xóa</button>
+        <button type="button" class="btn btn-primary btn-danger" onclick="onDeleteRoomConfirm()">Xóa</button>
       </div>
     </div>
   </div>
