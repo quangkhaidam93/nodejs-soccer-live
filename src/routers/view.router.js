@@ -6,6 +6,9 @@ router.get('/', (req, res) => res.render("pages/home"));
 router.get('/lich-truc-tiep', (req, res) => {
   res.render("pages/livestreamSchedule")
 });
+router.get('/:roomId', (req, res) => {
+  res.render("pages/livestreamSchedule")
+});
 router.get('/highlights', (req, res) => res.render("pages/highlights"));
 router.get('/admin/login', (req, res) => res.render("pages/loginAdmin"));
 router.get('/admin/sign-up', (req, res) => res.render("pages/signUpAdmin"));

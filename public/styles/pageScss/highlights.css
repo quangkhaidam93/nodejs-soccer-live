@@ -1,0 +1,81 @@
+@charset "UTF-8";
+.HighlightsScreen {
+  min-height: calc(100vh - 100px);
+  background-image: url("//sta.cvndnss.com/xoilac2_web/assets/xoilac2/img/banner.jpg");
+}
+.HighlightsScreen .highlight__title {
+  margin-top: unset;
+  padding-top: 100px;
+  padding-left: 60px;
+  color: white;
+}
+.HighlightsScreen .highlight__container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 30px;
+  background-color: #efefef;
+}
+.HighlightsScreen .highlight__container .highlight__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  height: 235px;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px 0 #ccc;
+  margin-bottom: 60px;
+  margin-left: 60px;
+  background-color: #ffffff;
+  text-decoration: unset;
+}
+.HighlightsScreen .highlight__container .highlight__content .highlight__top .highlight__image {
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.HighlightsScreen .highlight__container .highlight__content .highlight__top .highlight__text {
+  box-sizing: border-box;
+  font-family: Roboto, MYRIADPRO-SEMIBOLD, PingFang SC, tahoma, arial, "Microsoft Yahei", "Hiragino Sans GB", "宋体", sans-serif;
+  color: black;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 5px 10px;
+  word-break: break-word;
+}
+.HighlightsScreen .highlight__container .highlight__content .highlight__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 10px;
+}
+.HighlightsScreen .highlight__container .highlight__content .highlight__bottom .leftside {
+  box-sizing: border-box;
+  font-family: Roboto, MYRIADPRO-SEMIBOLD, PingFang SC, tahoma, arial, "Microsoft Yahei", "Hiragino Sans GB", "宋体", sans-serif;
+  color: black;
+  font-size: 12px;
+  padding: 5px 10px;
+  word-break: break-word;
+  color: red;
+}
+.HighlightsScreen .highlight__container .highlight__content .highlight__bottom .rightside {
+  box-sizing: border-box;
+  font-family: Roboto, MYRIADPRO-SEMIBOLD, PingFang SC, tahoma, arial, "Microsoft Yahei", "Hiragino Sans GB", "宋体", sans-serif;
+  color: black;
+  font-size: 12px;
+  padding: 5px 10px;
+  word-break: break-word;
+}
+
+.highlight__container {
+  margin: unset;
+  background-color: #F0F1F6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*# sourceMappingURL=highlights.css.map */
