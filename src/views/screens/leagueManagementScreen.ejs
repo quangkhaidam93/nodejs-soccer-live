@@ -67,3 +67,80 @@
     </div>
   </div>
 </div>
+
+
+<!-- Update Modal -->
+<div class="modal fade" id="updateLeagueModal" tabindex="-1" aria-labelledby="updateLeagueModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateLeagueModalTitle">Cập nhật thông tin giải</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="AddLeagueManagementDialog">
+          <div class="dialogForm__input">
+            <div class="input__label">Tên giải</div>
+            <input id="leagueName" type="text" class="leagueName__input"></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Hình ảnh</div>
+            <input id="leagueImage" type="file" class="leagueName__input"></input>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" onclick="updateLeagueSubmit()">Cập nhật</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Info modal -->
+<div class="modal fade" id="infoLeagueModal" tabindex="-1" aria-labelledby="infoLeagueModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoLeagueModalTitle">Thông tin giải</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="AddLeagueManagementDialog">
+          <div class="dialogForm__input">
+            <div class="input__label">Tên giải</div>
+            <input id="leagueName" type="text" class="leagueName__input" disbaled></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Hình ảnh</div>
+            <input id="leagueImage" type="file" class="leagueName__input" disbaled></input>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete modal -->
+<div class="modal fade" id="deleteLeagueModal" tabindex="-1" aria-labelledby="deleteLeagueModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteLeagueModalTitle">Xác nhận xóa giải</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="BodyDialog">
+          <div>Bạn có chắc chắn xóa giải <span class="red__alert">[name]</span> này không ?</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary btn-danger" onclick="onDeleteLeagueConfirm()">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -40,7 +40,7 @@
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Add Modal -->
 <div class="modal fade" id="addCasterModal" tabindex="-1" aria-labelledby="addCasterModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -63,6 +63,82 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
         <button type="button" class="btn btn-primary" onclick="createNewCasterSubmit()">Thêm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Update Modal -->
+<div class="modal fade" id="updateCasterModal" tabindex="-1" aria-labelledby="updateCasterModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateCasterModalTitle">Cập nhật thông tin caster</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="updateCasterBodyDialog">
+          <div class="dialogForm__input">
+            <div class="input__label">Họ tên</div>
+            <input id="casterName" type="text" class="casterName__input"></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Avatar</div>
+            <input id="casterAvatarImage" type="file" class="casterName__input" ></input>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" onclick="updateCasterSubmit()">Cập nhật</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Info modal -->
+<div class="modal fade" id="infoCasterModal" tabindex="-1" aria-labelledby="infoCasterModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoCasterModalTitle">Thông tin caster</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="updateCasterBodyDialog">
+          <div class="dialogForm__input">
+            <div class="input__label">Họ tên</div>
+            <input id="casterName" type="text" class="casterName__input" disbaled></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Avatar</div>
+            <input id="casterAvatarImage" type="file" class="casterName__input" disbaled></input>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete modal -->
+<div class="modal fade" id="deleteCasterModal" tabindex="-1" aria-labelledby="deleteCasterModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteCasterModalTitle">Xác nhận xóa caster</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="BodyDialog">
+          <div>Bạn có chắc chắn xóa caster <span class="red__alert">[name]</span> này không ?</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary btn-danger" onclick="onDeleteRoomConfirm()">Xóa</button>
       </div>
     </div>
   </div>

@@ -19,8 +19,15 @@ async function createNewRoomSubmit() {
 
 async function getListRoomData() {
   const fetchedRooms = await getAllRooms();
-  console.log('ccc', fetchedRooms);
   const listRoom = [...fetchedRooms];
+  // remove child element
+  const tableBodyRemove = document.getElementById("table-body");
+  var child = tableBodyRemove.lastElementChild; 
+  while (child) {
+      tableBodyRemove.removeChild(child);
+      child = tableBodyRemove.lastElementChild;
+  }
+  // add list info 
   listRoom.forEach((r, idx) => {
     const tableBody = document.getElementById("table-body");
     tableBody.innerHTML += '<tr class="table__row" ><th class="each__data" scope="row" >' + (idx + 1) + '</th>' +
@@ -32,9 +39,21 @@ async function getListRoomData() {
       '<td class="each_data" >' + r.league.name + '</td>' +
       '<td class="each_data" >' + moment(r.createdAt).format('DD/MM/YYYY') + '</td>' +
       '<td class="each_data" >' + moment(r.updatedAt).format('DD/MM/YYYY') + '</td>' +
-      '<td class="each__data"> <button class="action__btn update__btn" onclick="openDialogUpdateInfo">u</button><button class="action__btn info__btn" onclick="openDialogWatchInfo">i</button></td>' +
+      '<td class="each__data">' + 
+        '<button class="action__btn update__btn" data-bs-toggle="modal" data-bs-target="#updateRoomModal">u</button>' +
+        '<button class="action__btn info__btn" data-bs-toggle="modal" data-bs-target="#infoRoomModal">i</button>' +
+        '<button class="action__btn delete__btn" data-bs-toggle="modal" data-bs-target="#deleteRoomModal">d</button>' +
+      '</td>' +
       '</tr>'
   })
 }
 
 getListRoomData();
+
+async function updateRoomSubmit() {
+
+}
+
+async function onDeleteRoomConfirm() {
+  
+}

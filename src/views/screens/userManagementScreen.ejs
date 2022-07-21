@@ -16,7 +16,7 @@
             <th scope="col"></th>
           </tr>
         </thead>
-        <tbody class="table-group-divider table__body" id="table-body" >
+        <tbody class="table-group-divider table__body"  >
         </tbody>
       </table>
       <nav class="table__pagination" aria-label="Page navigation example">
@@ -36,6 +36,100 @@
           </li>
         </ul>
       </nav>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="updateUserModal" tabindex="-1" aria-labelledby="updateUserModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateUserModalTitle">Cập nhật thông tin người dùng</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="BodyDialog">
+          <div class="dialogForm__input">
+            <div class="input__label">Họ tên</div>
+            <input id="casterName" type="text" class="casterName__input"></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Nickname</div>
+            <input id="casterName" type="text" class="casterName__input"></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Vai trò</div>
+            <select class="role__input" id="role" class="form-select" aria-label="Chọn vai trò">
+              <option selected>Selected data</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" onclick="updateUserInfoSubmit()">Cập nhật</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Info modal -->
+<div class="modal fade" id="infoUserModal" tabindex="-1" aria-labelledby="infoUserModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoUserModalTitle">Thông tin người dùng</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="BodyDialog">
+          <div class="dialogForm__input">
+            <div class="input__label">Họ tên</div>
+            <input id="casterName" type="text" class="casterName__input" disabled></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Nickname</div>
+            <input id="casterName" type="text" class="casterName__input" disabled></input>
+          </div>
+          <div class="dialogForm__input">
+            <div class="input__label">Vai trò</div>
+            <select class="role__input" id="role" class="form-select" aria-label="Chọn vai trò" disabled>
+              <option selected>Selected data</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete modal -->
+<div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="deleteUserModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteUserModalTitle">Xác nhận xóa người dùng</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="BodyDialog">
+          <div>Bạn có chắc chắn xóa người dùng <span class="red__alert">[name]</span> này không ?</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary btn-danger" onclick="onDeleteUserConfirm()">Xóa</button>
+      </div>
     </div>
   </div>
 </div>
