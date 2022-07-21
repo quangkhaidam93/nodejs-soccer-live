@@ -37,5 +37,7 @@ copy-ssl-configs:
 	cp /etc/letsencrypt/live/atzstore.net/* ./secrets
 seed-data:
 	sequelize db:seed:all --options-path host-configs/.sequelizerc
+seed-data-down:
+	sequelize db:seed:undo:all --options-path host-configs/.sequelizerc
 test:
 	sh ./scripts/load_dotenv.sh && printenv
