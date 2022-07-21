@@ -3,7 +3,7 @@ async function getAllLeagues() {
     const response = await client.get("/leagues");
 
     const { arrayData } = responseHandler(response);
-    console.log(arrayData);
+    return arrayData;
   } catch (err) {}
 }
 
