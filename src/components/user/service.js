@@ -2,6 +2,16 @@ const User = require('../../models/user.model');
 const { findRoleNameById } = require('../role/service');
 const { roleTypes } = require('../../models/role.model');
 
+const findUsers = async () => {
+  try {
+    const users = await User.findAll({attributes: {exclude: ['password']}});
+    return users;
+  } catch (err) {
+    console.log('findUserByUsername error', err);
+    return null;
+  }
+}
+
 const findUserByUsername = async (username) => {
   try {
     const user = await User.findOne({ where: { username } });
@@ -25,5 +35,6 @@ const checkUserIsAdmin = async (id) => {
 
 module.exports = {
   findUserByUsername,
-  checkUserIsAdmin
+  checkUserIsAdmin,
+  findUsers,
 }

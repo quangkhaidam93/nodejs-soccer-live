@@ -17,6 +17,7 @@ const formatRoomRes = room => ({
     name: room.leagueName,
     image: room.leagueImage,
   },
+  streamUrl: room.streamUrl,
 })
 
 module.exports = {

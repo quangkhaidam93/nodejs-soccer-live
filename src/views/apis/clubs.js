@@ -3,7 +3,7 @@ async function getAllClubs() {
     const response = await client.get("/clubs");
 
     const { arrayData } = responseHandler(response);
-    console.log(arrayData);
+    return arrayData;
   } catch (err) {}
 }
 

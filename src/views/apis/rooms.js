@@ -1,10 +1,10 @@
 async function getAllRooms(offset) {
-  console.log('triggered');
   try {
     const response = await client.get("/rooms", { offset });
 
     const { arrayData, hasMore, offset: responseOffset } = responseHandler(response);
-    console.log(arrayData, hasMore, responseOffset);
+    return arrayData;
+    // console.log(arrayData, hasMore, responseOffset);
   } catch (err) {
     console.log('err', err);
   }
