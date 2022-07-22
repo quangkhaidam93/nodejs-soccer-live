@@ -44,6 +44,7 @@ app.use(
   apiRouter.fileRouter,
   apiRouter.messageRouter,
   apiRouter.roomRouter,
+  apiRouter.roleRouter,
 );
 
 // assets

@@ -1,14 +1,15 @@
 const User = require("../../models/user.model");
-const { findUserByUsername, findUsers } = require("./service");
+const userService = require("./service");
 const {
   generateResponse,
   generateResponseForArray,
 } = require("../../utils/response");
 const statusType = require("../../constants/statusType");
+const { validateUserId, validateUserObject } = require('./validation');
 
 const getAllUsers = async (req, res) => {
   try {
-    const users = await findUsers();
+    const users = await userService.findUsers();
     res.send(
       generateResponseForArray({
         type: statusType.SUCCESS,
@@ -29,7 +30,7 @@ const getAllUsers = async (req, res) => {
 const getUserInfo = async (req, res) => {
   const username = req.params.username;
 
-  const user = await findUserByUsername(username);
+  const user = await userService.findUserByUsername(username);
 
   res.send(
     generateResponse({
@@ -40,7 +41,27 @@ const getUserInfo = async (req, res) => {
   );
 };
 
+const editUserInfo = async (req, res) => {
+  const userId = validateUserId(req, res);
+  const updatedUser = validateUserObject(req, res);
+  const user = await userService.updateUser(userId, updatedUser);
+  if (!user) {
+    res.send(generateResponse({
+      type: statusType.INTERNAL_SERVER_ERROR,
+      message: 'Lỗi server',
+    }));
+    return;
+  }
+
+  res.send(generateResponse({
+    type: statusType.SUCCESS,
+    message: 'Thành công',
+    data: user
+  }))
+}
+
 module.exports = {
   getUserInfo,
   getAllUsers,
+  editUserInfo,
 };

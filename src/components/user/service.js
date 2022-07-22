@@ -22,19 +22,36 @@ const findUserByUsername = async (username) => {
   }
 }
 
-const checkUserIsAdmin = async (id) => {
-  const user = await User.findOne({ where: { id } });
-  
-  if (!user) return null;
-  
-  const roleName = findRoleNameById(user.roleId);
+const updateUser = async (id, updatedUser) => {
+  try {
+    const user = await User.update(
+      { ...updatedUser },
+      { where: { id } }
+    );
+    return user[0];
+  } catch (err) {
+    return null;
+  }
+}
 
-  if (roleName === roleTypes.ADMIN) return true;
-  return false;
+const checkUserIsAdmin = async (id) => {
+  try {
+    const user = await User.findOne({ where: { id } });
+    
+    if (!user) return null;
+    
+    const roleName = findRoleNameById(user.roleId);
+
+    if (roleName === roleTypes.ADMIN) return true;
+    return false;
+  } catch (err) {
+    return false;
+  }
 }
 
 module.exports = {
   findUserByUsername,
   checkUserIsAdmin,
   findUsers,
+  updateUser,
 }

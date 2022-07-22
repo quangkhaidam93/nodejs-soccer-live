@@ -6,6 +6,7 @@ const leagueRouter = require("../components/league/router");
 const fileRouter = require("../components/file/router");
 const messageRouter = require("../components/message/router");
 const roomRouter = require("../components/room/router");
+const roleRouter = require("../components/role/router");
 
 module.exports = {
   authRouter,
@@ -16,4 +17,5 @@ module.exports = {
   fileRouter,
   messageRouter,
   roomRouter,
+  roleRouter,
 };
