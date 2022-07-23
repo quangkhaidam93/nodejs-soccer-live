@@ -1,0 +1,116 @@
+.LivestreamSchedule {
+  min-height: calc(100vh - 100px);
+  background-color: #efefef;
+}
+.LivestreamSchedule .schedule__headerContainer {
+  height: 90px;
+  width: 100%;
+  background-color: #292929;
+}
+.LivestreamSchedule .schedule__list {
+  padding: 100px 50px 50px;
+}
+.LivestreamSchedule .schedule__list .schedule__room {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 140px;
+  margin-bottom: 12px;
+  border-right: solid 7px #ffc71c;
+  border-radius: 4px;
+  background: #fff;
+}
+.LivestreamSchedule .schedule__list .schedule__room .content__leagueTime {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+}
+.LivestreamSchedule .schedule__list .schedule__room .content__leagueTime .league__text {
+  margin-bottom: 4px;
+  color: #777;
+  font-size: 18px;
+}
+.LivestreamSchedule .schedule__list .schedule__room .content__leagueTime .time__text {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+.LivestreamSchedule .schedule__list .schedule__room .match__info {
+  width: 250px;
+  margin: 0 20px;
+}
+.LivestreamSchedule .schedule__list .schedule__room .match__info .club__info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 15px;
+}
+.LivestreamSchedule .schedule__list .schedule__room .match__info .club__info:first-child {
+  margin-top: unset;
+}
+.LivestreamSchedule .schedule__list .schedule__room .match__info .club__info .club__image {
+  width: 36px;
+  height: 36px;
+}
+.LivestreamSchedule .schedule__list .schedule__room .match__info .club__info .club__name {
+  margin-left: 5px;
+  width: 150px;
+  font-size: 16px;
+  color: #000;
+  vertical-align: middle;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.LivestreamSchedule .schedule__list .schedule__room ::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: #f3f3f3;
+  border-radius: 15px;
+}
+.LivestreamSchedule .schedule__list .schedule__room ::-webkit-scrollbar-thumb:horizontal {
+  background: #737373;
+  border-radius: 10px;
+}
+.LivestreamSchedule .schedule__list .schedule__room .blv__container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: calc(100% - 400px);
+  overflow-y: hidden;
+  padding-bottom: 10px;
+}
+.LivestreamSchedule .schedule__list .schedule__room .blv__container .blv__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 90px;
+  width: 90px;
+  margin-right: 18px;
+}
+.LivestreamSchedule .schedule__list .schedule__room .blv__container .blv__info .blv__image {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 6px;
+  border-radius: 50%;
+}
+.LivestreamSchedule .schedule__list .schedule__room .blv__container .blv__info .blv__name {
+  width: 100%;
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.livestreamSchedule__container {
+  margin: unset;
+  background-color: #F0F1F6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*# sourceMappingURL=livestreamSchedule.css.map */

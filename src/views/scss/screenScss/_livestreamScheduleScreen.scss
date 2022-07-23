@@ -1,0 +1,108 @@
+@import './../constants/flex';
+@import './../constants/color';
+@import './../constants/scrollbar';
+
+.LivestreamSchedule {
+  min-height: calc(100vh - 100px);
+  background-color: #efefef;
+
+  .schedule__headerContainer {
+    height: 90px;
+    width: 100%;
+    background-color: #292929;
+  }
+
+  .schedule__list {
+    padding: 100px 50px 50px;
+
+    .schedule__room {
+      @include flex-start-center;
+
+      height: 140px;
+      margin-bottom: 12px;
+      border-right: solid 7px #ffc71c;
+      border-radius: 4px;
+      background: #fff;
+
+      .content__leagueTime {
+        @include flex-column-center-center;
+        width: 150px;
+
+        .league__text {
+          margin-bottom: 4px;
+          color: #777;
+          font-size: 18px;
+        }
+
+        .time__text {
+          font-size: 24px;
+          font-weight: 600;
+          color: #000;
+        }
+      }
+
+      .match__info {
+        width: 250px;
+        margin: 0 20px;
+
+        .club__info {
+          @include flex-start-center;
+          margin-top: 15px;
+
+          &:first-child {
+            margin-top: unset;
+          }
+
+          .club__image {
+            width: 36px;
+            height: 36px;
+          }
+
+          .club__name {
+            margin-left: 5px;
+            width: 150px;
+            font-size: 16px;
+            color: #000;
+            vertical-align: middle;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+
+      @include customHorizontalScrollbarV1(5px, 5px, #f3f3f3, #737373);
+
+      .blv__container {
+        @include flex-start-center;
+        width: calc(100% - 400px);
+        overflow-y: hidden;
+        padding-bottom: 10px;
+
+        .blv__info {
+          @include flex-column-center-center;
+          min-width: 90px;
+          width: 90px;
+          margin-right: 18px;
+
+          .blv__image {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 6px;
+            border-radius: 50%;
+          }
+
+          .blv__name {
+            width: 100%;
+            font-size: 14px;
+            color: #000;
+            text-align: center;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+}
