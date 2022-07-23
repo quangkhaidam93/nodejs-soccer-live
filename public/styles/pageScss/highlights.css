@@ -1,13 +1,18 @@
 @charset "UTF-8";
 .HighlightsScreen {
   min-height: calc(100vh - 100px);
-  background-image: url("//sta.cvndnss.com/xoilac2_web/assets/xoilac2/img/banner.jpg");
+  background-color: #efefef;
+}
+.HighlightsScreen .highlight__headerCont {
+  height: 90px;
+  width: 100%;
+  background-color: #292929;
 }
 .HighlightsScreen .highlight__title {
   margin-top: unset;
-  padding-top: 100px;
+  padding-top: 20px;
   padding-left: 60px;
-  color: white;
+  color: #4b4b4b;
 }
 .HighlightsScreen .highlight__container {
   display: flex;
@@ -16,7 +21,6 @@
   flex-wrap: wrap;
   width: 100%;
   padding-top: 30px;
-  background-color: #efefef;
 }
 .HighlightsScreen .highlight__container .highlight__content {
   display: flex;
