@@ -13,11 +13,12 @@
   }
 
   .schedule__list {
+    @include flex-column-center-center;
     padding: 100px 50px 50px;
 
     .schedule__room {
       @include flex-start-center;
-
+      max-width: 1280px;
       height: 140px;
       margin-bottom: 12px;
       border-right: solid 7px #ffc71c;

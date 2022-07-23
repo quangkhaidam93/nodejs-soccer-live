@@ -21,6 +21,9 @@ async function createNewCasterSubmit() {
     alert('Tạo caster thất bại, vui lòng thử lại.')
   })
   .finally(() => {
+    let casterName = document.getElementById('casterName');
+    casterName.value = '';
+    $('#addCasterModal').modal('hide');
     getListCasterData();
   });
 }
@@ -38,15 +41,37 @@ async function getListCasterData() {
   // add list info 
   listCaster.forEach((c, idx) => {
     const tableBody = document.getElementById("table-body");
-    tableBody.innerHTML += `<tr class="table__row" ><th class="each__data" scope="row" > ${idx + 1} </th>
-        <td class="each__data" > ${c.fullName} </td>
-        <td class="each__data" > ${c.avatar} </td>
-        <td class="each__data" > ${moment(c.createdAt).format('DD/MM/YYYY')} </td>
-        <td class="each__data" > ${moment(c.updatedAt).format('DD/MM/YYYY')} </td>
+    tableBody.innerHTML += `
+      <tr class="table__row" >
+        <th class="each__data" scope="row"> ${idx + 1} </th>
+        <td class="each__data"> ${c.fullName} </td>
+        <td class="each__data"> 
+          <img class="data__image" src=${c.avatar}/> 
+        </td>
+        <td class="each__data"> ${moment(c.createdAt).format('DD/MM/YYYY')} </td>
+        <td class="each__data"> ${moment(c.updatedAt).format('DD/MM/YYYY')} </td>
         <td class="each__data">
-          <button class="action__btn update__btn" data-bs-toggle="modal" data-bs-target="#updateCasterModal" onclick="selectCaster(${c.id}, 'update')" >u</button>
-          <button class="action__btn info__btn" data-bs-toggle="modal" data-bs-target="#infoCasterModal" onclick="selectCaster(${c.id}, 'info')" >i</button>
-          <button class="action__btn delete__btn" data-bs-toggle="modal" data-bs-target="#deleteCasterModal" onclick="selectCaster(${c.id}, 'delete')" >d</button>
+          <button 
+            class="action__btn update__btn"
+            data-bs-toggle="modal"
+            data-bs-target="#updateCasterModal"
+            onclick="selectCaster(${c.id}, 'update')">
+            u
+          </button>
+          <button 
+            class="action__btn info__btn" 
+            data-bs-toggle="modal" 
+            data-bs-target="#infoCasterModal" 
+            onclick="selectCaster(${c.id}, 'info')" >
+            i
+          </button>
+          <button 
+            class="action__btn delete__btn" 
+            data-bs-toggle="modal" 
+            data-bs-target="#deleteCasterModal" 
+            onclick="selectCaster(${c.id}, 'delete')" >
+            d
+          </button>
         </td>
       </tr>`
   })
@@ -88,7 +113,7 @@ function selectCaster(casterId, type) {
 }
 
 // update caster
-async function updateCasterSubmit(casterId) {
+async function updateCasterSubmit() {
   const casterName = document.getElementById('updateCasterName').value;
   const image = document.getElementById('casterAvatarImage').files[0];
   let imageUrl = selectedCaster.avatar;
@@ -109,10 +134,11 @@ async function updateCasterSubmit(casterId) {
 }
 
 // xóa caster
-async function onDeleteCasterConfirm(casterId) {
+async function onDeleteCasterConfirm() {
   try {
-    await deleteCaster(selectedCaster.id).then(res => {
-      if (response.data.statusCode === 200) {
+    await deleteCaster(selectedCaster.id)
+    .then(res => {
+      if (res.data.statusCode === 200) {
         alert('Xóa caster thành công')
       }
     })

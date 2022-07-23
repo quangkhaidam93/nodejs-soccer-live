@@ -12,7 +12,6 @@ async function getClubById(id) {
     const response = await client.get(`/club/${id}`);
 
     const { data } = responseHandler(response);
-    console.log(data);
   } catch (err) {}
 }
 
@@ -24,8 +23,10 @@ async function createNewClub({ name, image }) {
     });
 
     const { data } = responseHandler(response);
-    console.log(data);
-  } catch (err) {}
+    return response;
+  } catch (err) {
+    return err;
+  }
 }
 
 async function updateClub(id, { name, image }) {
@@ -36,17 +37,20 @@ async function updateClub(id, { name, image }) {
     });
 
     const { data } = responseHandler(response);
-    console.log(data);
-  } catch (err) {}
+    return response;
+  } catch (err) {
+    return err;
+  }
 }
 
 async function deleteClub(id) {
   try {
     const response = await client.delete(`/club/${id}`);
-
     const { message } = responseHandler(response);
-    console.log(message);
-  } catch (err) {}
+    return response;
+  } catch (err) {
+    return err;
+  }
 }
 
 // getAllClubs();

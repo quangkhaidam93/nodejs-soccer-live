@@ -80,11 +80,11 @@
         <div class="AddClubManagementDialog">
           <div class="dialogForm__input">
             <div class="input__label">Tên CLB</div>
-            <input id="clubName" type="text" class="clubName__input"></input>
+            <input id="updateClubName" type="text" class="clubName__input"></input>
           </div>
           <div class="dialogForm__input">
             <div class="input__label">Hình ảnh</div>
-            <input id="clubImage" type="file" class="clubName__input"></input>
+            <input id="updateClubImage" type="file" class="clubName__input"></input>
           </div>
         </div>
       </div>
@@ -108,11 +108,11 @@
         <div class="AddClubManagementDialog">
           <div class="dialogForm__input">
             <div class="input__label">Tên CLB</div>
-            <input id="clubName" type="text" class="clubName__input" disbaled></input>
+            <input id="infoClubName" type="text" class="clubName__input" disabled></input>
           </div>
           <div class="dialogForm__input">
             <div class="input__label">Hình ảnh</div>
-            <input id="clubImage" type="file" class="clubName__input" disbaled></input>
+            <input id="clubImage" type="file" class="clubName__input" disabled></input>
           </div>
         </div>
       </div>
@@ -132,9 +132,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="BodyDialog">
-          <div>Bạn có chắc chắn xóa CLB <span class="red__alert">[name]</span> này không ?</div>
-        </div>
+        <div class="BodyDialog" id="deleteBodyText"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
