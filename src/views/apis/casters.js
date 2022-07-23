@@ -51,7 +51,7 @@ async function deleteCaster(id) {
   try {
     const response = await client.delete(`/caster/${id}`);
     const { message } = responseHandler(response);
-    return response.data;
+    return response;
   } catch (err) {
     return err;
   }

@@ -55,7 +55,7 @@ async function getListClubData() {
           class="action__btn update__btn" 
           data-bs-toggle="modal" 
           data-bs-target="#updateClubModal"
-          onclick="selectCaster(${c.id}, 'update')"
+          onclick="selectClub(${c.id}, 'update')"
         >
           u
         </button>
@@ -63,7 +63,7 @@ async function getListClubData() {
           class="action__btn info__btn"
           data-bs-toggle="modal"
           data-bs-target="#infoClubModal"
-          onclick="selectCaster(${c.id}, 'info')"
+          onclick="selectClub(${c.id}, 'info')"
         >
           i
         </button>
@@ -71,7 +71,7 @@ async function getListClubData() {
           class="action__btn delete__btn" 
           data-bs-toggle="modal" 
           data-bs-target="#deleteClubModal"
-          onclick="selectCaster(${c.id}, 'delete')"
+          onclick="selectClub(${c.id}, 'delete')"
         >
           d
         </button>
@@ -80,9 +80,8 @@ async function getListClubData() {
   })
 }
 
-
 // select caster
-function selectCaster(clubId, type) {
+function selectClub(clubId, type) {
   const dataSelectedClub = listClub.find(c => c.id === clubId);
   selectedClub = dataSelectedClub;
   switch(type) {

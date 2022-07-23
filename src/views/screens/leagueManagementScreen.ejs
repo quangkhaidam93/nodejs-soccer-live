@@ -81,11 +81,11 @@
         <div class="AddLeagueManagementDialog">
           <div class="dialogForm__input">
             <div class="input__label">Tên giải</div>
-            <input id="leagueName" type="text" class="leagueName__input"></input>
+            <input id="updateLeagueName" type="text" class="leagueName__input"></input>
           </div>
           <div class="dialogForm__input">
             <div class="input__label">Hình ảnh</div>
-            <input id="leagueImage" type="file" class="leagueName__input"></input>
+            <input id="updateLeagueImage" type="file" class="leagueName__input"></input>
           </div>
         </div>
       </div>
@@ -109,11 +109,11 @@
         <div class="AddLeagueManagementDialog">
           <div class="dialogForm__input">
             <div class="input__label">Tên giải</div>
-            <input id="leagueName" type="text" class="leagueName__input" disbaled></input>
+            <input id="infoLeagueName" type="text" class="leagueName__input" disabled></input>
           </div>
           <div class="dialogForm__input">
             <div class="input__label">Hình ảnh</div>
-            <input id="leagueImage" type="file" class="leagueName__input" disbaled></input>
+            <input id="infoLeagueImage" type="file" class="leagueName__input" disabled></input>
           </div>
         </div>
       </div>
@@ -133,9 +133,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="BodyDialog">
-          <div>Bạn có chắc chắn xóa giải <span class="red__alert">[name]</span> này không ?</div>
-        </div>
+        <div class="BodyDialog" id="deleteBodyText"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
