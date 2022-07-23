@@ -84,7 +84,7 @@
           </div>
           <div class="dialogForm__input">
             <div class="input__label">Avatar</div>
-            <input id="casterAvatarImage" type="file" class="casterName__input" ></input>
+            <input id="casterAvatarImage" type="file" class="casterName__input"></input>
           </div>
         </div>
       </div>
@@ -108,11 +108,11 @@
         <div class="updateCasterBodyDialog">
           <div class="dialogForm__input">
             <div class="input__label">Họ tên</div>
-            <input id="casterName" type="text" class="casterName__input" disbaled></input>
+            <input id="infoCasterName" type="text" class="casterName__input" disabled></input>
           </div>
           <div class="dialogForm__input">
             <div class="input__label">Avatar</div>
-            <input id="casterAvatarImage" type="file" class="casterName__input" disbaled></input>
+            <input id="casterAvatarImage" type="file" class="casterName__input" disabled></input>
           </div>
         </div>
       </div>
@@ -132,9 +132,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="BodyDialog">
-          <div>Bạn có chắc chắn xóa caster <span class="red__alert">[name]</span> này không ?</div>
-        </div>
+        <div class="BodyDialog" id="deleteBodyText"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
