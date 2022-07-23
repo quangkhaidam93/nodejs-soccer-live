@@ -8,12 +8,17 @@
   background-color: #292929;
 }
 .LivestreamSchedule .schedule__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 100px 50px 50px;
 }
 .LivestreamSchedule .schedule__list .schedule__room {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  max-width: 1280px;
   height: 140px;
   margin-bottom: 12px;
   border-right: solid 7px #ffc71c;

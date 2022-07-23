@@ -4,7 +4,9 @@ async function getAllCasters() {
 
     const { arrayData } = responseHandler(response);
     return arrayData;
-  } catch (err) {}
+  } catch (err) {
+    return err;
+  }
 }
 
 async function getCasterById(id) {
@@ -13,7 +15,9 @@ async function getCasterById(id) {
 
     const { data } = responseHandler(response);
     console.log(data);
-  } catch (err) {}
+  } catch (err) {
+    return err;
+  }
 }
 
 async function createNewCaster({ fullName, avatar }) {
@@ -22,10 +26,11 @@ async function createNewCaster({ fullName, avatar }) {
       fullName,
       avatar,
     });
-
     const { data } = responseHandler(response);
-    console.log(data);
-  } catch (err) {}
+    return response;
+  } catch (err) {
+    return err;
+  }
 }
 
 async function updateCaster(id, { fullName, avatar }) {
@@ -36,17 +41,20 @@ async function updateCaster(id, { fullName, avatar }) {
     });
 
     const { data } = responseHandler(response);
-    console.log(data);
-  } catch (err) {}
+    return response;
+  } catch (err) {
+    return err;
+  }
 }
 
 async function deleteCaster(id) {
   try {
     const response = await client.delete(`/caster/${id}`);
-
     const { message } = responseHandler(response);
-    console.log(message);
-  } catch (err) {}
+    return response.data;
+  } catch (err) {
+    return err;
+  }
 }
 
 // getAllCasters();
