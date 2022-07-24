@@ -96,5 +96,17 @@
         Quản lí role
       </a>
     <% } %>
+    <div 
+      class="navigate" 
+      onclick="onLogout()">
+      Đăng xuất
+    </div>
   </div>
 </div>
+
+<script>
+async function onLogout() {
+  localStorage.removeItem('token');
+  window.location.href = '/admin/login'; 
+}
+</script>

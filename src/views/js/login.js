@@ -13,5 +13,11 @@ function submitLogin() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
   // if (!checkUsernameValue(username) || !checkPassword(password)) return;
-  signin(username, password);
+  signin(username, password)
+  .then(res => {
+    window.location.href = '/admin/quan-li-user'; 
+  })
+  .catch(err => {
+    alert('Đăng nhập thất bại, vui lòng thử lại')
+  });
 }
