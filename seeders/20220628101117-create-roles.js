@@ -5,6 +5,7 @@ module.exports = {
     return queryInterface
       .bulkInsert("Roles", [
         {
+          id: 1,
           name: "USER",
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -13,6 +14,7 @@ module.exports = {
       .then(() =>
         queryInterface.bulkInsert("Roles", [
           {
+            id: 2,
             name: "ADMIN",
             createdAt: new Date(),
             updatedAt: new Date(),
