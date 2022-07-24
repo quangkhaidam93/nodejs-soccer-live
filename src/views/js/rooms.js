@@ -217,7 +217,7 @@ async function createNewRoomSubmit() {
     $('#leagueName').val('');
     $('#clubName_1').val('');
     $('#clubName_2').val('');
-    $('#addCasterModal').modal('hide');
+    $('#addRoomModal').modal('hide');
     getListRoomData();
   });
 }
