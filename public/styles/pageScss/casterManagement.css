@@ -41,6 +41,10 @@
 .CasterManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data {
   vertical-align: middle;
 }
+.CasterManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .data__image {
+  height: 30px;
+  width: 30px;
+}
 .CasterManagementScreen .table__container .table__content .data__table .table__body .table__row .each__data .action__btn {
   height: 35px;
   width: 35px;

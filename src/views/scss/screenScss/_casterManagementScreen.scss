@@ -49,6 +49,11 @@
             .each__data {
               vertical-align: middle;
 
+              .data__image {
+                height: 30px;
+                width: 30px;
+              }
+
               .action__btn {
                 height: 35px;
                 width: 35px;

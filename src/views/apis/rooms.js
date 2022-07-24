@@ -13,49 +13,56 @@ async function getAllRooms(offset) {
 async function getRoomById(id) {
   try {
     const response = await client.get(`/room/${id}`);
-
     const { data } = responseHandler(response);
-    console.log(data);
-  } catch (err) {}
+    return response;
+  } catch (err) {
+    return err
+  }
 }
 
-async function createNewRoom({ name, casterId, club1Id, club2Id, leagueId }) {
+async function createNewRoom({ name, streamUrl, casterId, leagueId, club1Id, club2Id }) {
   try {
     const response = await client.post("/room", {
       name,
+      streamUrl,
       casterId,
+      leagueId,
       club1Id,
       club2Id,
-      leagueId,
     });
 
     const { data } = responseHandler(response);
-    console.log(data);
-  } catch (err) {}
+    return response;
+  } catch (err) {
+    return err
+  }
 }
 
-async function updateRoom(id, { name, casterId, club1Id, club2Id, leagueId }) {
+async function updateRoom(id, { name, streamUrl, leagueId, casterId, club1Id, club2Id }) {
   try {
     const response = await client.post(`/room/${id}`, {
       name,
+      streamUrl,
       casterId,
+      leagueId,
       club1Id,
       club2Id,
-      leagueId,
     });
-
     const { data } = responseHandler(response);
-    console.log(data);
-  } catch (err) {}
+    return response
+  } catch (err) {
+    return err
+  }
 }
 
 async function deleteRoom(id) {
   try {
     const response = await client.delete(`/room/${id}`);
-
     const { message } = responseHandler(response);
-    console.log(message);
-  } catch (err) {}
+    return response    
+  } catch (err) {
+    return err
+  }
 }
 
 // getAllRooms();

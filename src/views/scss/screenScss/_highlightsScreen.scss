@@ -2,13 +2,19 @@
 
 .HighlightsScreen {
   min-height: calc(100vh - 100px);
-  background-image: url("//sta.cvndnss.com/xoilac2_web/assets/xoilac2/img/banner.jpg");
+  background-color: #efefef;
+
+  .highlight__headerCont {
+    height: 90px;
+    width: 100%;
+    background-color: #292929;
+  }
 
   .highlight__title {
     margin-top: unset;
-    padding-top: 100px;
+    padding-top: 20px;
     padding-left: 60px;
-    color: white;
+    color: #4b4b4b;
   }
 
   .highlight__container {
@@ -16,7 +22,6 @@
     flex-wrap: wrap;
     width: 100%;
     padding-top: 30px;
-    background-color: #efefef;
 
     .highlight__content {
       @include flex-column-between-center;

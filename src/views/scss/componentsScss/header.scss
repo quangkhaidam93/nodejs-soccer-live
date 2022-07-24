@@ -46,6 +46,7 @@
 
     .separator {
       @include header-font;
+      margin-left: 10px;
     }
   }
 }

@@ -22,10 +22,12 @@ async function createNewLeague({ name, image }) {
       name,
       image,
     });
-
     const { data } = responseHandler(response);
-    console.log(data);
-  } catch (err) {}
+
+    return response;
+  } catch (err) {
+    return err;
+  }
 }
 
 async function updateLeague(id, { name, image }) {
@@ -34,19 +36,23 @@ async function updateLeague(id, { name, image }) {
       name,
       image
     });
-
     const { data } = responseHandler(response);
-    console.log(data);
-  } catch (err) {}
+
+    return response;
+  } catch (err) {
+    return err;
+  }
 }
 
 async function deleteLeague(id) {
   try {
     const response = await client.delete(`/league/${id}`);
-
     const { message } = responseHandler(response);
-    console.log(message);
-  } catch (err) {}
+
+    return response;
+  } catch (err) {
+    return err;
+  }
 }
 
 // getAllLeagues();
