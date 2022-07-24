@@ -1,5 +1,5 @@
 dev:
-	docker-compose -f docker-compose.dev.yml up
+	docker compose -f docker-compose.dev.yml up
 dev-with-new-build:
 	docker-compose -f docker-compose.dev.yml up --build
 dev-down:
