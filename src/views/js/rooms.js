@@ -218,7 +218,7 @@ async function createNewRoomSubmit() {
     $('#clubName_1').val('');
     $('#clubName_2').val('');
     $('#addCasterModal').modal('hide');
-    getAllRooms();
+    getListRoomData();
   });
 }
 
@@ -241,7 +241,7 @@ async function updateRoomSubmit() {
   })
   .finally(() => {
     $('#updateRoomModal').modal('hide');
-    getAllRooms();
+    getListRoomData();
   });
 }
 
@@ -258,7 +258,7 @@ async function onDeleteRoomConfirm() {
     })
     .finally(() => {
       $('#deleteRoomModal').modal('hide');
-      getAllRooms();
+      getListRoomData();
     });
   } catch (err) {
     console.log(err);
