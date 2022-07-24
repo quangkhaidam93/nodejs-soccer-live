@@ -20,7 +20,9 @@ function submitSignUp() {
   const confirmPW = document.getElementById("confirm__password").value;
   const nickname = document.getElementById("nickname").value;
   if (checkUsernameValue(username) && checkPassword(password, confirmPW)) {
-    signup(username, password, nickname);
+    signup(username, password, nickname).then(res => {
+      window.location.href = '/admin/quan-li-user'; 
+    });
   }
   return
 }
