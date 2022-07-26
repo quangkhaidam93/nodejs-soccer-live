@@ -2,11 +2,8 @@ let highlightRoom;
 let listRooms = [];
 
 async function getListRoomData() {
-  console.log("🚀 ~ file: homepage.js ~ line 6 ~ getListRoomData ~ fetchedRooms")
   const fetchedRooms = await getAllRooms();
-  console.log("🚀 ~ file: homepage.js ~ line 6 ~ getListRoomData ~ fetchedRooms", fetchedRooms)
   const listRoom = [...fetchedRooms];
-  console.log("🚀 ~ file: homepage.js ~ line 8 ~ getListRoomData ~ listRoom", listRoom)
 
   highlightRoom = listRoom[0];
   listRooms = listRoom;
@@ -17,7 +14,6 @@ async function getListRoomData() {
       <iframe class="livestream__video" src=${highlightRoom.streamUrl}></iframe>
     `
     listRoom.forEach((room, roomIdx) => {
-      console.log("🚀 ~ file: homepage.js ~ line 20 ~ listRoom.forEach ~ room", room)
       if (roomIdx !== 0) {
         const videoList = document.getElementById("videoList");
         videoList.innerHTML = `
@@ -70,7 +66,6 @@ async function getListCasters() {
   listCaster = [...resListCaster];
   if(listCaster.length > 0) {
     listCaster.forEach((caster, casterIdx) => {
-      console.log("🚀 ~ file: homepage.js ~ line 73 ~ listCaster.forEach ~ caster", caster)
       const casterSlider = document.getElementById("casterSlider");
       casterSlider.innerHTML = `
       <div class="blvIcon__container">
