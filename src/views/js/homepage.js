@@ -37,19 +37,25 @@ async function getListRoomData() {
           <div class="matchHeader__left">
             <img
               class="sport__icon"
-              src="https://sta.cvndnss.com/file/common/20210503/fca5954ec22137ad05325506d6645592">
-            <span class="league__name">${room.leagueId}</span>
+              src=${room.league.image}>
+            <span class="league__name">${room.league.name}</span>
           </div>
         </div>
         <div class="battle__info">
           <div class="battle__left">
             <div class="team__battle">
-              <img class="team__logo" src="https://sta.cvndnss.com/file/imgs/team/football/20121218210601.gif" data-src="https://sta.cvndnss.com/file/imgs/team/football/20121218210601.gif">
-              <span class="team__name">Blaublitz Akita</span>
+              <img 
+                class="team__logo" 
+                src=${room.club1.image}
+                data-src=${room.club1.image}>
+              <span class="team__name">${room.club1.name}</span>
             </div>
             <div class="team__battle">
-              <img class="team__logo" src="https://sta.cvndnss.com/file/imgs/team/football/20150923114054.png" data-src="https://sta.cvndnss.com/file/imgs/team/football/20150923114054.png" alt="">
-              <span class="team__name">Renofa Yamaguchi</span>
+              <img 
+                class="team__logo" 
+                src=${room.club2.image}
+                data-src=${room.club2.image}>
+              <span class="team__name">${room.club2.name}</span>
             </div>
           </div>
         </div>
@@ -64,6 +70,7 @@ async function getListCasters() {
   listCaster = [...resListCaster];
   if(listCaster.length > 0) {
     listCaster.forEach((caster, casterIdx) => {
+      console.log("🚀 ~ file: homepage.js ~ line 73 ~ listCaster.forEach ~ caster", caster)
       const casterSlider = document.getElementById("casterSlider");
       casterSlider.innerHTML = `
       <div class="blvIcon__container">
