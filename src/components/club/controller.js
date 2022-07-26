@@ -7,14 +7,26 @@ const {
 const statusType = require("../../constants/statusType");
 const { validateClubId, validateClubObject } = require("./validation");
 const clubService = require("./service");
+const { isEmptyArray } = require('../../utils/array');
 
 const getAllClubs = async (req, res) => {
   const clubs = await clubService.findAllClubs();
+
+  if (clubs || isEmptyArray(clubs)) {
+    res.send(
+      generateResponseForArray({
+        type: statusType.SUCCESS,
+        arrayData: clubs,
+        message: "Thành công",
+      })
+    );
+    return;
+  }
+
   res.send(
-    generateResponseForArray({
-      type: statusType.SUCCESS,
-      arrayData: clubs,
-      message: "Thành công",
+    generateResponse({
+      type: statusType.INTERNAL_SERVER_ERROR,
+      message: "Failed",
     })
   );
 };

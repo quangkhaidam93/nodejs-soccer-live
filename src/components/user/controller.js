@@ -5,16 +5,28 @@ const {
   generateResponseForArray,
 } = require("../../utils/response");
 const statusType = require("../../constants/statusType");
-const { validateUserId, validateUserObject } = require('./validation');
+const { validateUserId, validateUserObject } = require("./validation");
+const { isEmptyArray } = require("../../utils/array");
 
 const getAllUsers = async (req, res) => {
   try {
     const users = await userService.findUsers();
+
+    if (users || isEmptyArray(users)) {
+      res.send(
+        generateResponseForArray({
+          type: statusType.SUCCESS,
+          message: "Tìm thành công",
+          arrayData: users,
+        })
+      );
+      return;
+    }
+
     res.send(
-      generateResponseForArray({
-        type: statusType.SUCCESS,
-        message: "Tìm thành công",
-        arrayData: users,
+      generateResponse({
+        type: statusType.INTERNAL_SERVER_ERROR,
+        message: "Something go wrong!",
       })
     );
   } catch (err) {
@@ -46,19 +58,23 @@ const editUserInfo = async (req, res) => {
   const updatedUser = validateUserObject(req, res);
   const user = await userService.updateUser(userId, updatedUser);
   if (!user) {
-    res.send(generateResponse({
-      type: statusType.INTERNAL_SERVER_ERROR,
-      message: 'Lỗi server',
-    }));
+    res.send(
+      generateResponse({
+        type: statusType.INTERNAL_SERVER_ERROR,
+        message: "Lỗi server",
+      })
+    );
     return;
   }
 
-  res.send(generateResponse({
-    type: statusType.SUCCESS,
-    message: 'Thành công',
-    data: user
-  }))
-}
+  res.send(
+    generateResponse({
+      type: statusType.SUCCESS,
+      message: "Thành công",
+      data: user,
+    })
+  );
+};
 
 module.exports = {
   getUserInfo,

@@ -8,7 +8,7 @@ const envConfigs = require("../config/environment");
 const http = require("http");
 const https = require("https");
 const fs = require("fs");
-const CronJob = require('./cron-jobs');
+const CronJob = require("./cron-jobs");
 const socketConnection = require("./socket");
 
 app.use(express.static(__dirname, { dotfiles: "allow" }));
@@ -44,7 +44,7 @@ app.use(
   apiRouter.fileRouter,
   apiRouter.messageRouter,
   apiRouter.roomRouter,
-  apiRouter.roleRouter,
+  apiRouter.roleRouter
 );
 
 // assets
@@ -58,6 +58,12 @@ app.use("/admin/views", express.static(path.join(__dirname, "./views/")));
 // serve images
 // app.user("/images", express.static(path.join(__dirname, '../public/images')))
 
+// 404
+// app.get("*", (req, res) => {
+//   console.log('alo');
+//   res.redirect("/");
+// });
+
 db.sync()
   .then(() => {
     const httpServer = http.createServer(app);
@@ -69,7 +75,6 @@ db.sync()
     cronjob.scheduleDeleteOldMessages();
 
     httpServer.listen(envConfigs.serverPort, function () {
-      
       console.log("Server is running on port ", envConfigs.serverPort);
     });
 

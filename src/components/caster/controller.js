@@ -7,14 +7,30 @@ const {
 const statusType = require("../../constants/statusType");
 const { validateCasterId, validateCasterObject } = require("./validation");
 const casterService = require("./service");
+const { isEmptyArray } = require('../../utils/array');
+
+const DEFAULT_LIMIT = 10;
 
 const getAllCasters = async (req, res) => {
-  const casters = await casterService.findAllCasters();
+  const limit = req.body.limit || DEFAULT_LIMIT;
+  const offset = req.body.offset;
+  const casters = await casterService.findAllCasters({ limit, offset });
+
+  if (casters || isEmptyArray(casters)) {
+    res.send(
+      generateResponseForArray({
+        type: statusType.SUCCESS,
+        arrayData: casters,
+        message: "Thành công",
+      })
+    );
+    return;
+  }
+
   res.send(
-    generateResponseForArray({
-      type: statusType.SUCCESS,
-      arrayData: casters,
-      message: "Thành công",
+    generateResponse({
+      type: statusType.INTERNAL_SERVER_ERROR,
+      message: "Failed",
     })
   );
 };
@@ -75,7 +91,6 @@ const editCasterInfo = async (req, res) => {
     casterId,
     needUpdateCaster
   );
-
 
   if (!updatedCaster) {
     res.send(

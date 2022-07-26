@@ -8,13 +8,15 @@ const statusType = require("../../constants/statusType");
 const roomService = require("./service");
 const { validateRoomObject, validateRoomId } = require("./validation");
 const { formatRoomRes } = require("./formatData");
+const { isEmptyArray } = require('../../utils/array');
 
 const getRooms = async (req, res) => {
   const offset = req.body.offset || 0;
+  const limit = req.body.limit || roomService.LIMIT;
 
   let rooms = await roomService.findRooms(offset);
 
-  if (rooms) {
+  if (rooms || isEmptyArray(rooms)) {
     const hasMore = rooms.length <= roomService.LIMIT;
 
     rooms = rooms.map((r) => formatRoomRes(r));
@@ -28,7 +30,17 @@ const getRooms = async (req, res) => {
         offset: offset + rooms.length,
       })
     );
+
+    return;
   }
+
+
+  res.send(
+    generateResponse({
+      type: statusType.INTERNAL_SERVER_ERROR,
+      message: "Failed",
+    })
+  );
 };
 
 const getRoomInfo = async (req, res) => {

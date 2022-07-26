@@ -1,7 +1,7 @@
 const messageService = require('./service');
 const { generateResponseForArray, generateResponse } = require("../../utils/response");
 const statusType = require("../../constants/statusType");
-const nodemon = require('nodemon');
+const { isEmptyArray } = require('../../utils/array');
 
 const getMessages = async (req, res) => {
   const cursor = req.body.cursor;
@@ -14,16 +14,27 @@ const getMessages = async (req, res) => {
     const hasMore = pagination.pageInfo.hasNextPage;
     const cursor = pagination.pageInfo.endCursor;
 
+    if (messages || isEmptyArray(messages)) {
+      res.send(
+        generateResponseForArray({
+          type: statusType.SUCCESS,
+          arrayData: messages,
+          message: "Thành công",
+          cursor,
+          total,
+          hasMore
+        })
+      );
+      return;
+    }
+
     res.send(
-      generateResponseForArray({
-        type: statusType.SUCCESS,
-        arrayData: messages,
-        message: "Thành công",
-        cursor,
-        total,
-        hasMore
+      generateResponse({
+        type: statusType.INTERNAL_SERVER_ERROR,
+        message: "Thất bại",
       })
     );
+
   } else {
     res.send(
       generateResponse({

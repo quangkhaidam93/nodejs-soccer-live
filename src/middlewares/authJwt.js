@@ -3,6 +3,7 @@ const { generateResponse } = require("../utils/response");
 const statusType = require("../constants/statusType");
 const { isValidToken, getPayloadFromToken } = require("../utils/token");
 const { checkUserIsAdmin } = require("../components/user/service");
+const authUtil = require('../utils/auth');
 
 const verifyToken = (req, res, next) => {
   const rawToken = req.headers.authorization;
@@ -38,6 +39,8 @@ const isAdmin = async (req, res, next) => {
   const { userName, userId } = getPayloadFromToken(token);
 
   const isAdmin = await checkUserIsAdmin();
+  
+  console.log('isAdmin? ', isAdmin);
 
   if (!isAdmin) {
     res.send(
@@ -51,7 +54,15 @@ const isAdmin = async (req, res, next) => {
   next();
 }
 
+const canAccessAdminPage = async (req, res, next) => {
+  const isAdmin = await authUtil.isAdmin(req);
+
+  if (!isAdmin) res.redirect('/');
+  next();
+}
+
 module.exports = {
   verifyToken,
-  isAdmin
+  isAdmin,
+  canAccessAdminPage
 }

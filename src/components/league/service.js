@@ -1,33 +1,46 @@
-const League = require('../../models/league.model');
+const League = require("../../models/league.model");
 
 const findAllLeagues = async () => {
-  const leagues = await League.findAll();
-  return leagues;
+  try {
+    const leagues = await League.findAll();
+    return leagues;
+  } catch (err) {
+    return null;
+  }
 };
 
 const findLeagueById = async (id) => {
-  const league = await League.findOne({ where: { id } });
-  return league;
+  try {
+    const league = await League.findOne({ where: { id } });
+    return league;
+  } catch (err) {
+    return null;
+  }
 };
 
 const createLeague = async (newLeague) => {
-  const createdLeague = await League.create(newLeague);
-  return createdLeague;
+  try {
+    const createdLeague = await League.create(newLeague);
+    return createdLeague;
+  } catch (err) {
+    return null;
+  }
 };
 
 const editLeague = async (id, updatedLeague) => {
-  const league = await League.update(
-    { ...updatedLeague },
-    { where: { id } }
-  );
-  return league[0];
+  try {
+    const league = await League.update({ ...updatedLeague }, { where: { id } });
+    return league[0];
+  } catch (err) {
+    return null;
+  }
 };
 
 const deleteLeague = async (id) => {
   try {
     const deletedLeague = await League.destroy({ where: { id } });
     return deletedLeague;
-  } catch(err) {
+  } catch (err) {
     console.log("Error", err);
     return null;
   }
@@ -38,5 +51,5 @@ module.exports = {
   findLeagueById,
   createLeague,
   editLeague,
-  deleteLeague
-}
+  deleteLeague,
+};

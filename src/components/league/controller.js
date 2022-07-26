@@ -4,14 +4,26 @@ const { generateResponse, generateResponseForArray } = require("../../utils/resp
 const statusType = require("../../constants/statusType");
 const { validateLeagueId, validateLeagueObject } = require("./validation");
 const leagueService = require("./service");
+const { isEmptyArray } = require('../../utils/array');
 
 const getAllLeagues = async (req, res) => {
   const leagues = await leagueService.findAllLeagues();
+
+  if (leagues || isEmptyArray(leagues)) {
+    res.send(
+      generateResponseForArray({
+        type: statusType.SUCCESS,
+        arrayData: leagues,
+        message: "Thành công",
+      })
+    );
+    return;
+  }
+
   res.send(
-    generateResponseForArray({
-      type: statusType.SUCCESS,
-      arrayData: leagues,
-      message: "Thành công",
+    generateResponse({
+      type: statusType.INTERNAL_SERVER_ERROR,
+      message: "Failed",
     })
   );
 };

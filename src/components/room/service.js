@@ -23,8 +23,12 @@ const findRooms = async (offset) => {
 };
 
 const createNewRoom = async (newRoom) => {
-  const createdRoom = await Room.create(newRoom);
-  return createdRoom;
+  try {
+    const createdRoom = await Room.create(newRoom);
+    return createdRoom;
+  } catch (err) {
+    return null;
+  }
 };
 
 const findRoomById = async (id) => {
@@ -41,13 +45,21 @@ const findRoomById = async (id) => {
 };
 
 const editRoom = async (id, updatedRoom) => {
-  const room = await Room.update({ ...updatedRoom }, { where: { id } });
-  return room[0];
+  try {
+    const room = await Room.update({ ...updatedRoom }, { where: { id } });
+    return room[0];
+  } catch (err) {
+    return null;
+  }
 };
 
 const deleteRoom = async (id) => {
-  const deletedRoom = await Room.destroy({ where: { id } });
-  return deletedRoom;
+  try {
+    const deletedRoom = await Room.destroy({ where: { id } });
+    return deletedRoom;
+  } catch (err) {
+    return null;
+  }
 };
 
 module.exports = {
