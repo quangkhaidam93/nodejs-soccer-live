@@ -46,7 +46,7 @@ async function getListClubData() {
       <th class="each__data" scope="row" > ${idx + 1} </th>
       <td class="each_data" > ${c.name} </td>
       <td class="each_data" > 
-        <img class="data__image" src=${c.image}/>
+        <img class="data__image" src=${c.image} >
       </td>
       <td class="each_data" > ${moment(c.createdAt).format('DD/MM/YYYY')} </td>
       <td class="each_data" > ${moment(c.updatedAt).format('DD/MM/YYYY')} </td>

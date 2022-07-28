@@ -11,7 +11,7 @@ async function getListRoomData() {
 
   const matchNewestInfo = document.getElementById("matchInfoNewest");
   matchNewestInfo.innerHTML = `
-    <iframe class="livestream__video" src=${highlightRoom.streamUrl}></iframe>
+    <iframe class="livestream__video" src="${highlightRoom?.streamUrl}"></iframe>
   `
 }
 

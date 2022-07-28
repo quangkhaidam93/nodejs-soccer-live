@@ -14,10 +14,10 @@ function submitLogin() {
   const password = document.getElementById("password").value;
   // if (!checkUsernameValue(username) || !checkPassword(password)) return;
   signin(username, password)
-  .then(res => {
-    window.location.href = '/admin/quan-li-user'; 
-  })
-  .catch(err => {
-    alert('Đăng nhập thất bại, vui lòng thử lại')
-  });
+    .then(async (res) => {
+      window.location.replace("/admin/quan-li-user");
+    })
+    .catch((err) => {
+      alert("Đăng nhập thất bại, vui lòng thử lại");
+    });
 }

@@ -26,7 +26,7 @@ async function getListLeagueData() {
       <th class="each__data" scope="row" > ${(idx + 1)}</th>
       <td class="each_data"> ${l.name} </td>
       <td class="each_data"> 
-        <img class="data__image" src=${l.image}/> 
+        <img class="data__image" src=${l.image} > 
       </td>
       <td class="each_data"> ${moment(l.createdAt).format('DD/MM/YYYY')} </td>
       <td class="each_data"> ${moment(l.updatedAt).format('DD/MM/YYYY')} </td>

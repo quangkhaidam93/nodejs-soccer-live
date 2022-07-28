@@ -10,7 +10,7 @@ async function createNewCasterSubmit() {
   const casterName = document.getElementById('casterName').value;
   const image = document.getElementById('casterAvatarImage').files[0];
   let imageUrl;
-  if (image) imageUrl = await uploadImageFile();
+  if (image) imageUrl = await uploadImageFile(image);
   createNewCaster({ fullName: casterName, avatar: imageUrl })
   .then(res=> {
     if (res.data.statusCode === 200) {
@@ -46,7 +46,7 @@ async function getListCasterData() {
         <th class="each__data" scope="row"> ${idx + 1} </th>
         <td class="each__data"> ${c.fullName} </td>
         <td class="each__data"> 
-          <img class="data__image" src=${c.avatar}/> 
+          <img class="data__image" src=${c.avatar} > 
         </td>
         <td class="each__data"> ${moment(c.createdAt).format('DD/MM/YYYY')} </td>
         <td class="each__data"> ${moment(c.updatedAt).format('DD/MM/YYYY')} </td>

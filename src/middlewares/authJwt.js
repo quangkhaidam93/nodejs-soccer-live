@@ -38,17 +38,19 @@ const isAdmin = async (req, res, next) => {
 
   const { userName, userId } = getPayloadFromToken(token);
 
-  const isAdmin = await checkUserIsAdmin();
+  const isAdmin = await checkUserIsAdmin(userId);
   
   console.log('isAdmin? ', isAdmin);
 
   if (!isAdmin) {
-    res.send(
-      generateResponse({
-        type: statusType.FORBIDDEN,
-        message: "Không phải admin",
-      })
-    );
+    res.redirect('/');
+    return;
+    // res.send(
+    //   generateResponse({
+    //     type: statusType.FORBIDDEN,
+    //     message: "Không phải admin",
+    //   })
+    // );
   }
 
   next();
@@ -57,7 +59,10 @@ const isAdmin = async (req, res, next) => {
 const canAccessAdminPage = async (req, res, next) => {
   const isAdmin = await authUtil.isAdmin(req);
 
-  if (!isAdmin) res.redirect('/');
+  if (!isAdmin) {
+    res.redirect('/');
+    return;
+  }
   next();
 }
 

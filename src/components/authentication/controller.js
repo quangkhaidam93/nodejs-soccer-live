@@ -35,8 +35,6 @@ const signIn = async (req, res) => {
   } else {
     const token = generateAccessToken(user.username, user.id);
 
-    res.set('Authorization', token);
-
     res.send(
       generateResponse({
         type: statusType.SUCCESS,

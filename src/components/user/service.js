@@ -37,12 +37,12 @@ const updateUser = async (id, updatedUser) => {
 const checkUserIsAdmin = async (id) => {
   try {
     const user = await User.findOne({ where: { id } });
-    
+
     if (!user) return null;
     
-    const roleName = findRoleNameById(user.roleId);
+    // const roleName = await findRoleNameById(user.roleId);
 
-    if (roleName === roleTypes.ADMIN) return true;
+    if (user.roleId === roleTypes.ADMIN) return true;
     return false;
   } catch (err) {
     return false;
