@@ -5,6 +5,7 @@ const viewRouter = require("./routers/view.router");
 const apiRouter = require("./routers/api.router");
 const app = express();
 const envConfigs = require("../config/environment");
+const cors = require('cors');
 const http = require("http");
 const https = require("https");
 const fs = require("fs");
@@ -19,6 +20,9 @@ app.set("views", path.join(__dirname, "views"));
 
 // parse application/json
 app.use(bodyParser.json());
+
+// cors
+app.use(cors());
 
 // Database connection
 const db = require("./database");
